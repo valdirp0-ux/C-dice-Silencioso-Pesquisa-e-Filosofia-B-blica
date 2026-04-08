@@ -15,9 +15,8 @@
         }
         .font-serif { font-family: 'EB Garamond', serif; }
         
-        /* Aumento da largura máxima para ocupar a página */
         .container-master {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -25,11 +24,11 @@
         .card-evidencia {
             background: rgba(24, 24, 27, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 5rem; /* Espaçamento interno muito maior para visibilidade */
-            margin-bottom: 4rem;
+            border-radius: 20px;
+            padding: 6rem;
+            margin-bottom: 5rem;
             width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
         }
 
         .texto-destaque {
@@ -39,15 +38,15 @@
 
         .etiqueta-termo {
             display: inline-block;
-            font-size: 16px; /* Aumentado significativamente */
+            font-size: 18px;
             background-color: #f59e0b;
             color: #111113;
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 6px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-top: 2.5rem;
+            margin-top: 3rem;
         }
 
         .label-topo {
@@ -56,18 +55,7 @@
             font-style: italic;
             text-transform: uppercase;
             letter-spacing: 0.4em;
-            font-size: 22px; /* Maior e mais legível */
             display: block;
-        }
-
-        .sub-label {
-            color: #71717a;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-            font-size: 15px; /* Aumentado */
-            margin-bottom: 2rem;
-            display: block;
-            font-weight: 700;
         }
     </style>
 </head>
@@ -77,6 +65,9 @@
         <div>
             <h1 class="font-serif text-5xl tracking-[0.3em] text-white uppercase font-bold">Códice Silencioso</h1>
             <p class="text-sm tracking-[0.5em] uppercase text-amber-500 font-bold mt-3">Pesquisa e Filosofia Bíblica</p>
+        </div>
+        <div class="hidden md:block text-sm tracking-[0.4em] text-zinc-600 uppercase font-serif italic">
+            Sertãozinho, SP — 2026
         </div>
     </nav>
 
@@ -97,52 +88,88 @@
             </div>
         </section>
 
-        <section class="space-y-20">
+        <section class="space-y-24">
             <div class="text-center mb-32 border-b border-white/5 pb-20">
-                <span class="text-amber-500 text-lg tracking-[0.7em] uppercase font-black">Volume I</span>
+                <span class="text-amber-500 text-xl tracking-[0.7em] uppercase font-black">Volume I</span>
                 <h3 class="font-serif text-7xl md:text-8xl text-white mt-8 font-bold">O Despertar do Viajante</h3>
-                <p class="text-zinc-500 text-2xl mt-8 italic tracking-[0.4em] uppercase font-light">
+                <p class="text-zinc-500 text-3xl mt-8 italic tracking-[0.4em] uppercase font-light">
                     A natureza da continuidade consciente
                 </p>
             </div>
 
             <div class="card-evidencia">
                 <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
-                    <span class="label-topo">Evidência 01</span>
-                    <span class="text-zinc-500 text-lg tracking-[0.3em] uppercase font-bold">Lucas 23:43</span>
+                    <span class="label-topo text-4xl">Evidência 01</span>
                 </div>
-                <span class="sub-label">Sentido Restaurado (Análise de Pontuação)</span>
-                <p class="font-serif text-zinc-100 text-5xl leading-[1.4]">
-                    Nesta parte onde o texto aborda o tempo da promessa, <br>
-                    <span class="texto-destaque">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
-                </p>
-                <span class="etiqueta-termo">Sēmeron (Hoje)</span>
+                
+                <span class="text-zinc-500 uppercase tracking-[0.4em] text-2xl font-black mb-12 block">
+                    Sentido Restaurado (Análise de Pontuação)
+                </span>
+
+                <div class="space-y-12">
+                    <p class="font-serif text-zinc-300 text-4xl leading-relaxed italic">
+                        Nesta parte onde o texto aborda o tempo da promessa,
+                    </p>
+                    
+                    <p class="font-serif text-zinc-100 text-6xl md:text-8xl leading-tight font-bold">
+                        <span class="texto-destaque">"Em verdade te digo hoje: estarás comigo no Paraíso."</span> 
+                        <span class="text-zinc-700 text-3xl tracking-tighter ml-6 uppercase font-sans font-medium">Lucas 23:43</span>
+                    </p>
+                </div>
+
+                <div class="mt-16">
+                    <span class="etiqueta-termo text-2xl px-8 py-3">Sēmeron (Hoje)</span>
+                </div>
             </div>
 
             <div class="card-evidencia">
                 <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
-                    <span class="label-topo">Evidência 02</span>
-                    <span class="text-zinc-500 text-lg tracking-[0.3em] uppercase font-bold">Termo: Paradeiso</span>
+                    <span class="label-topo text-4xl">Evidência 02</span>
                 </div>
-                <span class="sub-label">Análise Etimológica</span>
-                <p class="font-serif text-zinc-100 text-5xl leading-[1.4]">
-                    Nesta parte onde a raiz persa define o local, <br>
-                    <span class="texto-destaque">"Jardim Cercado. Um ambiente de transição, frequência e preservação."</span>
-                </p>
-                <span class="etiqueta-termo">Raiz: Pairidaeza</span>
+                
+                <span class="text-zinc-500 uppercase tracking-[0.4em] text-2xl font-black mb-12 block">
+                    Análise Etimológica
+                </span>
+
+                <div class="space-y-12">
+                    <p class="font-serif text-zinc-300 text-4xl leading-relaxed italic">
+                        Nesta parte onde a raiz persa define o local,
+                    </p>
+                    
+                    <p class="font-serif text-zinc-100 text-6xl md:text-8xl leading-tight font-bold">
+                        <span class="texto-destaque">"Jardim Cercado. Um ambiente de transição, frequência e preservação."</span> 
+                        <span class="text-zinc-700 text-3xl tracking-tighter ml-6 uppercase font-sans font-medium">Termo: Paradeiso</span>
+                    </p>
+                </div>
+
+                <div class="mt-16">
+                    <span class="etiqueta-termo text-2xl px-8 py-3">Raiz: Pairidaeza</span>
+                </div>
             </div>
 
             <div class="card-evidencia">
                 <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
-                    <span class="label-topo">Evidência 04</span>
-                    <span class="text-zinc-500 text-lg tracking-[0.3em] uppercase font-bold">1 Coríntios 15:44</span>
+                    <span class="label-topo text-4xl">Evidência 04</span>
                 </div>
-                <span class="sub-label">A Natureza do Veículo</span>
-                <p class="font-serif text-zinc-100 text-5xl leading-[1.4]">
-                    Nesta parte onde o texto define os corpos, <br>
-                    <span class="texto-destaque">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span>
-                </p>
-                <span class="etiqueta-termo">Soma Pneumatikon</span>
+                
+                <span class="text-zinc-500 uppercase tracking-[0.4em] text-2xl font-black mb-12 block">
+                    A Natureza do Veículo
+                </span>
+
+                <div class="space-y-12">
+                    <p class="font-serif text-zinc-300 text-4xl leading-relaxed italic">
+                        Nesta parte onde o texto define os corpos,
+                    </p>
+                    
+                    <p class="font-serif text-zinc-100 text-6xl md:text-8xl leading-tight font-bold">
+                        <span class="texto-destaque">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span> 
+                        <span class="text-zinc-700 text-3xl tracking-tighter ml-6 uppercase font-sans font-medium">1 Coríntios 15:44</span>
+                    </p>
+                </div>
+
+                <div class="mt-16">
+                    <span class="etiqueta-termo text-2xl px-8 py-3">Soma Pneumatikon</span>
+                </div>
             </div>
 
         </section>
