@@ -14,7 +14,7 @@
             background-image: radial-gradient(circle at top, #27272a 0%, #18181b 100%);
         }
         .font-serif { font-family: 'EB Garamond', serif; }
-        .fade-in { animation: fadeIn 2s ease-in; }
+        .fade-in { animation: fadeIn 1.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
         .card-evidencia {
@@ -22,11 +22,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             transition: all 0.5s ease;
-            margin-bottom: 3rem;
-        }
-        .card-evidencia:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-            background: rgba(39, 39, 42, 0.8);
         }
         .texto-sagrado {
             color: #f59e0b;
@@ -40,137 +35,122 @@
             padding-left: 1.5rem;
             margin-bottom: 2rem;
             background: rgba(245, 158, 11, 0.03);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 1rem; padding-bottom: 1rem;
         }
 
-        /* Estilo do Botão do Portal com Efeito Hover e Foco Âmbar */
-        .btn-portal {
-            position: relative;
-            background: transparent;
-            color: #a1a1aa; /* zinc-400 */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-            overflow: hidden;
-            z-index: 1;
+        /* Estilo das Abas */
+        .tab-btn {
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            color: #71717a;
         }
-
-        .btn-portal:hover {
-            color: #ffffff;
-            border-color: #f59e0b; /* amber-500 */
-            background-color: #f59e0b;
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
-            transform: translateY(-3px);
+        .tab-btn.active {
+            border-color: #f59e0b;
+            color: #f59e0b;
+            font-weight: bold;
         }
-
-        /* Efeito de brilho pulsar no hover */
-        .btn-portal::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.4s ease;
-        }
-
-        .btn-portal:hover::before {
-            opacity: 1;
-            animation: pulse-light 1.5s infinite;
-        }
-
-        @keyframes pulse-light {
-            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-        }
-
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.8s ease-in; }
     </style>
 </head>
 <body class="selection:bg-amber-500/30 selection:text-amber-200">
 
-    <nav class="p-8 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
+    <nav class="p-10 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
         <div>
-            <h1 class="font-serif text-2xl tracking-widest text-white uppercase">Códice Silencioso</h1>
-            <p class="text-[10px] tracking-[0.3em] uppercase text-amber-500 font-medium">Pesquisa e Filosofia Bíblica</p>
+            <h1 class="font-serif text-4xl tracking-[0.4em] text-white uppercase font-bold">Códice Silencioso</h1>
+            <p class="text-[11px] tracking-[0.5em] uppercase text-amber-500 font-medium mt-2">Pesquisa e Filosofia Bíblica</p>
         </div>
-        <div class="hidden md:block text-[10px] tracking-widest text-zinc-400 uppercase font-serif italic">
+        <div class="hidden md:block text-xs tracking-widest text-zinc-500 uppercase font-serif italic">
             Sertãozinho, SP — 2026
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-20 fade-in">
+    <main class="max-w-5xl mx-auto px-6 py-24 fade-in">
         
-        <section class="text-center space-y-10 mb-32">
-            <h2 class="font-serif text-3xl md:text-5xl text-white italic leading-tight">
+        <section class="text-center space-y-12 mb-40">
+            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold italic leading-tight">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
             
-            <div class="max-w-2xl mx-auto space-y-6">
-                <p class="text-zinc-400 text-base font-light leading-relaxed">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <p class="text-zinc-400 text-xl font-light leading-relaxed">
                     Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido ocultado pelas camadas do tempo e da tradição.
                 </p>
                 
-                <div class="py-8 px-10 border-l border-r border-white/5 bg-zinc-900/20 italic text-zinc-500 font-serif text-lg">
+                <div class="py-10 px-12 border-l border-r border-white/5 bg-zinc-900/20 italic text-zinc-500 font-serif text-xl">
                     "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas e pela experiência pessoal."
                 </div>
             </div>
-
-            <div class="pt-10">
-                <a href="#portal-1" class="btn-portal inline-block px-12 py-4 tracking-[0.3em] uppercase text-[10px] font-bold">
-                    Entrar nos Portais
-                </a>
-            </div>
         </section>
 
-        <div class="h-40 flex items-center justify-center">
-            <div class="w-[1px] h-20 bg-gradient-to-b from-transparent via-amber-500/40 to-transparent"></div>
-        </div>
-
-        <section id="portal-1" class="py-20 space-y-20">
-            <div class="text-center mb-16">
-                <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-bold">Volume I</span>
-                <h3 class="font-serif text-5xl text-white mt-2">O Despertar do Viajante</h3>
-                <p class="text-zinc-400 text-sm mt-4 italic font-light tracking-widest uppercase">A natureza da continuidade consciente</p>
+        <section id="portais" class="py-20">
+            <div class="flex justify-center space-x-12 mb-16 border-b border-white/5 pb-4">
+                <button onclick="openTab(event, 'vol1')" class="tab-btn active uppercase tracking-[0.3em] text-sm pb-2">Volume I</button>
+                <button onclick="openTab(event, 'vol2')" class="tab-btn uppercase tracking-[0.3em] text-sm pb-2">Volume II</button>
+                <button onclick="openTab(event, 'vol3')" class="tab-btn uppercase tracking-[0.3em] text-sm pb-2">Volume III</button>
             </div>
 
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 01</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium underline decoration-amber-500/30">Lucas 23:43</span>
+            <div id="vol1" class="tab-content active space-y-16">
+                <div class="text-center mb-12">
+                    <h3 class="font-serif text-4xl text-white">O Despertar do Viajante</h3>
+                    <p class="text-amber-500 text-xs tracking-[0.4em] uppercase mt-2">A natureza da continuidade consciente</p>
                 </div>
-                <div class="space-y-8">
-                    <h4 class="text-zinc-500 uppercase text-[10px] font-bold tracking-[0.3em]">Fontes de Comparação</h4>
-                    <div class="fonte-antiga">
-                        <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Original Grego</span>
-                        <p class="italic text-2xl md:text-3xl leading-relaxed text-white">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
+
+                <div class="card-evidencia p-12 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
+                    <div class="flex justify-between border-b border-white/5 pb-4">
+                        <span class="text-amber-500 font-serif italic uppercase tracking-widest">Evidência 01</span>
+                        <span class="text-zinc-500 text-xs uppercase">Lucas 23:43</span>
                     </div>
                     <div class="fonte-antiga">
-                        <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Vulgata Latina</span>
-                        <p class="italic text-xl md:text-2xl leading-relaxed">"Amen dico tibi hodie mecum eris in paradiso"</p>
+                        <span class="text-[10px] uppercase text-amber-500 font-bold block mb-2">Original Grego (Codex Vaticanus)</span>
+                        <p class="italic text-3xl text-white leading-relaxed">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
                     </div>
                     <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
                         Sentido Restaurado: <br>
                         <span class="texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
                     </p>
                 </div>
+                
+                <div class="card-evidencia p-12 rounded-lg shadow-2xl border-l-4 border-l-amber-600">
+                    <div class="flex justify-between border-b border-white/5 pb-4">
+                        <span class="text-amber-500 font-serif italic uppercase tracking-widest">Evidência 04</span>
+                        <span class="text-zinc-500 text-xs uppercase">1 Coríntios 15:44</span>
+                    </div>
+                    <p class="font-serif text-zinc-100 text-2xl italic leading-relaxed">
+                        "Semeia-se corpo animal, ressuscitará corpo espiritual."
+                    </p>
+                    <p class="text-amber-500 font-bold tracking-widest text-[10px] uppercase mt-4">Soma Pneumatikon</p>
+                </div>
             </div>
 
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
-                <div class="font-serif italic text-lg text-zinc-500">"Jardim Cercado" - A geografia vibracional</div>
+            <div id="vol2" class="tab-content text-center py-20">
+                <h3 class="font-serif text-3xl text-zinc-500 italic">Conteúdo em fase de transcrição...</h3>
             </div>
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
-                <div class="font-serif italic text-lg text-zinc-500">"Cordão de Prata" - O desengate técnico</div>
+            
+            <div id="vol3" class="tab-content text-center py-20">
+                <h3 class="font-serif text-3xl text-zinc-500 italic">Conteúdo em fase de transcrição...</h3>
             </div>
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
-                <div class="font-serif italic text-lg text-zinc-500">"Corpo Espiritual" - A vestimenta presente</div>
-            </div>
-
         </section>
     </main>
 
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
     <footer class="p-20 text-center border-t border-white/5 bg-zinc-900/30">
-        <p class="text-[10px] tracking-[0.5em] text-zinc-500 uppercase font-medium italic">Pesquisa Independente — 2026</p>
+        <p class="text-[10px] tracking-[0.5em] text-zinc-500 uppercase italic">Onde o texto termina, a busca começa.</p>
     </footer>
 
 </body>
