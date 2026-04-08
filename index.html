@@ -31,12 +31,13 @@
         .fonte-antiga {
             font-family: 'EB Garamond', serif;
             color: #d1d1d6;
-            border-left: 3px solid #f59e0b;
-            padding-left: 1.5rem;
-            margin-bottom: 2rem;
-            background: rgba(245, 158, 11, 0.03);
-            padding-top: 1rem; padding-bottom: 1rem;
+            border-left: 4px solid #f59e0b;
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+            background: rgba(245, 158, 11, 0.05);
+            padding-top: 1.5rem; padding-bottom: 1.5rem;
         }
+
         .tab-btn {
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
@@ -50,6 +51,17 @@
         }
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.8s ease-in; }
+
+        /* Ajuste de legibilidade para fontes menores */
+        .label-fonte {
+            font-size: 0.85rem; /* Aumentado */
+            letter-spacing: 0.2em;
+            color: #f59e0b;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
     </style>
 </head>
 <body class="selection:bg-amber-500/30 selection:text-amber-200">
@@ -70,6 +82,12 @@
             <h2 class="font-serif text-5xl md:text-7xl text-white font-bold italic leading-tight">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
+
+            <div class="max-w-2xl mx-auto py-8 border-y border-white/5 space-y-4">
+                <p class="font-serif italic text-2xl text-zinc-400">"E conhecereis a verdade, e a verdade vos libertará." — João 8:32</p>
+                <p class="font-serif italic text-2xl text-zinc-400">"Examinais as Escrituras... e são elas mesmas que testificam de mim." — João 5:39</p>
+            </div>
+            
             <div class="max-w-3xl mx-auto space-y-8">
                 <p class="text-zinc-300 text-xl leading-relaxed font-bold">
                     Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido ocultado pelas camadas do tempo e da tradição.
@@ -95,70 +113,80 @@
 
                 <div class="card-evidencia p-12 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
                     <div class="flex justify-between border-b border-white/5 pb-4">
-                        <span class="text-amber-500 font-serif italic uppercase tracking-widest">Evidência 01</span>
-                        <span class="text-zinc-500 text-xs uppercase underline decoration-amber-500/30">Lucas 23:43</span>
+                        <span class="text-amber-500 font-serif italic uppercase tracking-widest text-lg">Evidência 01</span>
+                        <span class="text-zinc-400 text-sm uppercase font-bold">Lucas 23:43</span>
                     </div>
                     
-                    <div class="space-y-8">
-                        <h4 class="text-zinc-500 uppercase text-[10px] font-bold tracking-[0.3em]">Fontes de Comparação</h4>
+                    <div class="space-y-10">
+                        <h4 class="text-zinc-500 uppercase text-xs font-black tracking-[0.4em]">Fontes de Comparação</h4>
+                        
                         <div class="fonte-antiga">
-                            <span class="text-[10px] uppercase text-amber-500 font-bold block mb-2">Original Grego (Codex Vaticanus)</span>
-                            <p class="italic text-3xl text-white leading-relaxed">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
+                            <span class="label-fonte">Original Grego (Codex Vaticanus)</span>
+                            <p class="italic text-4xl text-white leading-relaxed">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
                         </div>
+
                         <div class="fonte-antiga">
-                            <span class="text-[10px] uppercase text-amber-500 font-bold block mb-2">Vulgata Latina (Séc. IV)</span>
-                            <p class="italic text-xl text-zinc-200">"Amen dico tibi hodie mecum eris in paradiso"</p>
+                            <span class="label-fonte">Vulgata Latina (Séc. IV)</span>
+                            <p class="italic text-2xl text-zinc-200">"Amen dico tibi hodie mecum eris in paradiso"</p>
                         </div>
-                        <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
+
+                        <p class="font-serif text-zinc-100 text-3xl leading-relaxed">
                             Sentido Restaurado: <br>
                             <span class="texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
                         </p>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-12 text-zinc-100 pt-10 border-t border-white/10">
-                        <div class="space-y-3">
-                            <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Filtro Dogmático</h4>
-                            <p class="font-serif leading-relaxed italic text-zinc-400">"Em verdade te digo que hoje estarás comigo no Paraíso."</p>
+                        <div class="space-y-4">
+                            <h4 class="text-xs uppercase tracking-widest text-zinc-500 font-black">Filtro Dogmático</h4>
+                            <p class="font-serif text-xl leading-relaxed italic text-zinc-400">"Em verdade te digo que hoje estarás comigo no Paraíso."</p>
                         </div>
-                        <div class="space-y-3">
-                            <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold">Sentido Ontológico</h4>
-                            <p class="font-serif leading-relaxed text-xl texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</p>
+                        <div class="space-y-4">
+                            <h4 class="text-xs uppercase tracking-widest text-amber-600 font-black">Sentido Ontológico</h4>
+                            <p class="font-serif leading-relaxed text-2xl texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="card-evidencia p-12 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
                     <div class="flex justify-between border-b border-white/5 pb-4">
-                        <span class="text-amber-500 font-serif italic uppercase tracking-widest">Evidência 02</span>
-                        <span class="text-zinc-500 text-xs uppercase underline decoration-amber-500/30">Termo: Paradeiso</span>
+                        <span class="text-amber-500 font-serif italic uppercase tracking-widest text-lg">Evidência 02</span>
+                        <span class="text-zinc-400 text-sm uppercase font-bold text-right">Termo: Paradeiso</span>
                     </div>
                     
-                    <div class="space-y-8">
-                        <h4 class="text-zinc-500 uppercase text-[10px] font-bold tracking-[0.3em]">Análise Etimológica</h4>
+                    <div class="space-y-10">
+                        <h4 class="text-zinc-500 uppercase text-xs font-black tracking-[0.4em]">Análise Etimológica</h4>
                         <div class="fonte-antiga">
-                            <span class="text-[10px] uppercase text-amber-500 font-bold block mb-2">Raiz Persa: Pairidaeza</span>
-                            <p class="italic text-3xl text-white">"Jardim Cercado"</p>
+                            <span class="label-fonte">Raiz Persa: Pairidaeza</span>
+                            <p class="italic text-4xl text-white italic">"Jardim Cercado"</p>
                         </div>
-                        <p class="text-2xl texto-sagrado leading-relaxed">
+                        <p class="text-3xl texto-sagrado leading-relaxed">
                             Um ambiente de transição, frequência e preservação.
                         </p>
                     </div>
-
-                    <div class="grid md:grid-cols-2 gap-12 text-zinc-100 pt-10 border-t border-white/10">
-                        <div class="space-y-3 border-r border-white/5 pr-4">
-                            <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Visão Tradicional</h4>
-                            <p class="text-zinc-400 italic font-serif leading-relaxed">Um destino final abstrato; um "céu" de descanso passivo.</p>
-                        </div>
-                        <div class="space-y-3">
-                            <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold">Geografia da Alma</h4>
-                            <p class="font-serif leading-relaxed text-xl texto-sagrado italic">"Jardim Cercado"</p>
-                            <p class="text-zinc-200 text-sm">Refere-se a um local de preservação frequencial da consciência.</p>
-                        </div>
-                    </div>
                 </div>
+            </div>
 
-                </div>
-            </section>
+            <div id="vol2" class="tab-content text-center py-20 italic text-zinc-500 text-2xl font-serif">Transcrição em andamento...</div>
+            <div id="vol3" class="tab-content text-center py-20 italic text-zinc-500 text-2xl font-serif">Transcrição em andamento...</div>
+        </section>
     </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+    <footer class="p-20 text-center border-t border-white/5 bg-zinc-900/30">
+        <p class="text-[10px] tracking-[0.5em] text-zinc-500 uppercase italic">Onde o texto termina, a busca começa.</p>
+    </footer>
+
 </body>
 </html>
