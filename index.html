@@ -17,17 +17,17 @@
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        /* INTRODUÇÃO E BOTÃO INICIAL */
-        .hero-section { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem 2.5rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.7rem; color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s; background: transparent; cursor: pointer; }
+        /* SEÇÃO INICIAL */
+        .hero-section { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem 2.5rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.7rem; color: rgba(255, 255, 255, 0.8); transition: all 0.3s; background: transparent; cursor: pointer; }
         .btn-portal:hover { background: white; color: black; border-color: white; }
 
         /* NAVEGAÇÃO DE VOLUMES (STICKY) */
         .volume-tabs {
-            display: none; /* Escondido inicialmente */
+            display: none; 
             justify-content: center;
             gap: 2rem;
-            background: rgba(17, 17, 19, 0.9);
+            background: rgba(17, 17, 19, 0.95);
             padding: 1.5rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             position: sticky;
@@ -38,17 +38,9 @@
         .vol-link { color: rgba(255,255,255,0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 8px; font-weight: 700; }
         .vol-link.active { color: #f59e0b; border-bottom-color: #f59e0b; }
 
-        /* NÍVEIS INTERNOS */
-        .niveis-grid { display: flex; justify-content: center; gap: 1.2rem; margin-top: 2rem; }
-        .nivel-btn {
-            width: 45px; height: 45px; border: 1px solid rgba(255,255,255,0.1);
-            display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
-            border-radius: 50%; transition: all 0.3s; color: rgba(255,255,255,0.5); text-decoration: none;
-        }
-        .nivel-btn:hover { border-color: #f59e0b; color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
-
-        .volume-section { display: none; padding-top: 4rem; }
-        .volume-section.active { display: block; animation: fadeIn 0.8s ease; }
+        /* CARDS DE CONTEÚDO */
+        .volume-content { display: none; padding: 4rem 0; }
+        .volume-content.active { display: block; animation: fadeIn 0.8s ease; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -56,9 +48,11 @@
             background: rgba(39, 39, 42, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
-            padding: 2.5rem;
+            padding: 3rem;
             margin-bottom: 3rem;
-            scroll-margin-top: 160px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .texto-traducao-final { color: #f59e0b; font-weight: 800; }
         .label-topo { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.3em; font-size: 1.25rem; }
@@ -78,10 +72,10 @@
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
             
-            <div class="max-w-2xl mx-auto space-y-6 text-zinc-500 italic font-serif text-lg leading-relaxed mb-12">
+            <div class="max-w-2xl mx-auto space-y-6 text-zinc-500 italic font-serif text-xl leading-relaxed mb-12">
                 <p>"Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido oculto pelas camadas do tempo e da tradição."</p>
-                <div class="p-6 border border-white/5 bg-white/5 text-sm not-italic tracking-wide">
-                    "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas pela experiência pessoal."
+                <div class="p-8 border border-white/5 bg-white/5 text-sm not-italic tracking-widest leading-relaxed">
+                    "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas através da análise técnica e da experiência pessoal."
                 </div>
             </div>
 
@@ -94,34 +88,44 @@
             <div class="vol-link opacity-20 cursor-not-allowed">Volume III</div>
         </nav>
 
-        <section id="vol1" class="volume-section">
-            <div class="text-center mb-12">
+        <section id="vol1" class="volume-content">
+            <div class="text-center mb-16">
                 <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-black">Volume I</span>
                 <h2 class="font-serif text-5xl text-white mt-4">O Despertar do Viajante</h2>
-                <p class="text-zinc-500 text-xs italic tracking-widest uppercase mt-2">Selecione o nível de evidência</p>
-                <div class="niveis-grid">
-                    <a href="#v1-n1" class="nivel-btn">01</a>
-                    <a href="#v1-n2" class="nivel-btn">02</a>
-                    <a href="#v1-n3" class="nivel-btn">03</a>
-                    <a href="#v1-n4" class="nivel-btn">04</a>
-                </div>
+                <p class="text-zinc-500 text-xs italic tracking-widest uppercase mt-4">A natureza da continuidade consciente</p>
             </div>
 
-            <div id="v1-n1" class="card-evidencia">
-                <span class="label-topo block mb-4">Evidência 01</span>
-                <p class="font-serif text-white text-3xl italic mb-6">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
-                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Em verdade te digo hoje: estarás comigo no Paraíso."</span></p>
+            <div class="card-evidencia">
+                <span class="label-topo block mb-6">Evidência 01</span>
+                <p class="font-serif text-white text-3xl italic mb-6 leading-tight">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
+                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Em verdade te digo hoje: estarás comigo no Paraíso." - Lucas 23:43</span></p>
             </div>
-            </section>
 
-        <section id="vol2" class="volume-section">
-            <div class="text-center mb-12">
+            <div class="card-evidencia">
+                <span class="label-topo block mb-6">Evidência 02</span>
+                <p class="font-serif text-white text-3xl italic mb-6 leading-tight">Do Persa antigo: "Jardim Cercado"</p>
+                <p class="text-zinc-400 text-lg mb-6">A raiz persa define o local como um ambiente de preservação.</p>
+                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Um ambiente de transição, frequência e preservação."</span></p>
+            </div>
+
+            <div class="card-evidencia">
+                <span class="label-topo block mb-6">Evidência 03</span>
+                <p class="font-serif text-white text-3xl italic mb-6 leading-tight">A fala de Jesus após a ressurreição indica um estado não finalizado.</p>
+                <p class="text-zinc-400 text-lg mb-6">Ainda não houve a subida ao Pai.</p>
+                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Não me detenhas, porque ainda não subi para meu Pai." - João 20:17</span></p>
+            </div>
+
+            <div class="card-evidencia">
+                <span class="label-topo block mb-6">Evidência 04</span>
+                <p class="font-serif text-white text-3xl italic mb-6 leading-tight">A transição da semente animal para a espiritual.</p>
+                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Semeia-se corpo animal, ressuscitará corpo espiritual." - 1 Coríntios 15:44</span></p>
+            </div>
+        </section>
+
+        <section id="vol2" class="volume-content">
+            <div class="text-center mb-16">
                 <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-black">Volume II</span>
                 <h2 class="font-serif text-5xl text-white mt-4">A Expansão da Percepção</h2>
-                <div class="niveis-grid">
-                    <a href="#v2-n5" class="nivel-btn">05</a>
-                    <a href="#v2-n6" class="nivel-btn">06</a>
-                </div>
             </div>
             </section>
 
@@ -129,7 +133,6 @@
 
     <script>
         function entrarPortais() {
-            // Esconde o hero e mostra o menu de volumes e o primeiro volume
             document.getElementById('hero').style.display = 'none';
             document.getElementById('nav-volumes').style.display = 'flex';
             document.getElementById('vol1').classList.add('active');
@@ -137,7 +140,7 @@
         }
 
         function toggleVolume(id) {
-            document.querySelectorAll('.volume-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.volume-content').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.vol-link').forEach(b => b.classList.remove('active'));
             
             document.getElementById(id).classList.add('active');
