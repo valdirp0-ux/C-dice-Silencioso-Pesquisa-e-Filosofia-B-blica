@@ -17,6 +17,32 @@
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
+        /* MENU DE ABAS FIXO */
+        .tabs-container {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(17, 17, 19, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1rem 0;
+        }
+
+        .tab-link {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-link:hover, .tab-link.active {
+            color: #f59e0b;
+            border-bottom: 2px solid #f59e0b;
+        }
+
         .card-evidencia {
             background: rgba(39, 39, 42, 0.4);
             backdrop-filter: blur(10px);
@@ -43,20 +69,6 @@
 
         .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 0.8rem 2rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.65rem; transition: all 0.3s ease; color: rgba(255, 255, 255, 0.6); text-decoration: none; display: inline-block; }
         .btn-portal:hover { background: white; color: black; border-color: white; }
-
-        /* Estilo para os Cards de Seleção de Nível */
-        .card-nivel-selecao {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            text-align: center;
-        }
-        .card-nivel-selecao:hover {
-            border-color: #f59e0b;
-            background: rgba(245, 158, 11, 0.05);
-            transform: translateY(-5px);
-        }
     </style>
 </head>
 <body>
@@ -82,32 +94,17 @@
             </div>
             
             <div class="mt-12 pt-10 border-t border-white/5">
-                <a href="#escolha-niveis" class="btn-portal">Entrar nos Portais</a>
+                <a href="#volume-1" class="btn-portal">Entrar nos Portais</a>
             </div>
         </section>
 
-        <section id="escolha-niveis" class="py-20 mb-20">
-            <div class="text-center mb-12">
-                <p class="text-zinc-500 text-[10px] tracking-[0.5em] uppercase mb-4">Selecione a Dimensão do Conhecimento</p>
-                <div class="h-[1px] w-20 bg-amber-500 mx-auto"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <a href="#volume-1" class="card-nivel-selecao">
-                    <span class="text-amber-500 text-[10px] tracking-widest font-black uppercase">Volume I</span>
-                    <h3 class="font-serif text-2xl text-white mt-2">O Despertar do Viajante</h3>
-                    <p class="text-zinc-500 text-xs mt-3 uppercase tracking-tighter italic">A natureza da continuidade consciente</p>
-                </a>
+        <div class="tabs-container flex justify-center gap-8 mb-12">
+            <a href="#volume-1" class="tab-link">Volume I: O Despertar</a>
+            <a href="#volume-2" class="tab-link">Volume II: Expansão</a>
+            <a href="#" class="tab-link opacity-20 cursor-not-allowed">Volume III: Brevemente</a>
+        </div>
 
-                <a href="#volume-2" class="card-nivel-selecao">
-                    <span class="text-amber-500 text-[10px] tracking-widest font-black uppercase">Volume II</span>
-                    <h3 class="font-serif text-2xl text-white mt-2">A Expansão da Percepção</h3>
-                    <p class="text-zinc-500 text-xs mt-3 uppercase tracking-tighter italic">Mecânica Dimensional e a Trindade Humana</p>
-                </a>
-            </div>
-        </section>
-
-        <div id="volume-1" class="text-center mb-16 pt-10">
+        <div id="volume-1" class="scroll-mt-32 text-center mb-16">
             <span class="text-amber-500 text-xs tracking-[0.6em] uppercase font-black">Volume I</span>
             <h2 class="font-serif text-5xl text-white mt-4 font-bold">O Despertar do Viajante</h2>
             <p class="text-zinc-600 text-sm mt-4 italic tracking-[0.3em] uppercase">A natureza da continuidade consciente</p>
@@ -125,7 +122,7 @@
                     <p class="font-serif text-zinc-400 text-2xl italic">"Amen dico tibi hodie..."</p>
                 </div>
                 <div class="contexto-guia">
-                    <strong>Contexto:</strong> A pontuação original foca no ato de Cristo declarar a promessa naquele dia ("te digo hoje"), e não em uma ida imediata ao paraíso naquele instante.
+                    <strong>Contexto:</strong> A pontuação original foca no ato de Cristo declarar a promessa naquele dia ("te digo hoje").
                 </div>
             </div>
             <div class="pt-6 border-t border-white/5">
@@ -134,8 +131,8 @@
                 </p>
             </div>
         </div>
-        
-        <div id="volume-2" class="text-center mb-16 pt-20 border-t border-white/5">
+
+        <div id="volume-2" class="scroll-mt-32 text-center mb-16 pt-20 border-t border-white/5">
             <span class="text-amber-500 text-xs tracking-[0.6em] uppercase font-black">Volume II</span>
             <h2 class="font-serif text-5xl text-white mt-4 font-bold">A Expansão da Percepção</h2>
             <p class="text-zinc-600 text-sm mt-4 italic tracking-[0.3em] uppercase">Mecânica Dimensional e a Trindade Humana</p>
@@ -162,7 +159,7 @@
             </div>
         </div>
 
-    </main>
+        </main>
 
     <footer class="p-12 text-center border-t border-white/5 opacity-40">
         <p class="text-[9px] tracking-[0.8em] text-zinc-500 uppercase font-black italic">Sertãozinho, SP</p>
