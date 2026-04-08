@@ -19,48 +19,57 @@
         
         .card-evidencia {
             background: rgba(39, 39, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 3rem;
             margin-bottom: 2rem;
         }
-        .card-evidencia:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-            background: rgba(39, 39, 42, 0.8);
-        }
-        
-        /* Classe específica para o Destaque em Negrito Âmbar */
-        .texto-sagrado-destaque {
-            color: #f59e0b; /* Amber 500 */
-            font-weight: 700; /* Negrito */
-            text-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+
+        .texto-destaque {
+            color: #f59e0b;
+            font-weight: 700;
         }
 
-        /* Classe para Etiquetas (como Soma Pneumatikon) */
         .etiqueta-termo {
             display: inline-block;
-            font-size: 11px;
-            background-color: #f59e0b; /* Amber 500 */
-            color: #18181b; /* Fundo do site */
-            padding-left: 10px; padding-right: 10px;
-            padding-top: 2px; padding-bottom: 2px;
+            font-size: 10px;
+            background-color: #f59e0b;
+            color: #18181b;
+            padding: 2px 10px;
             border-radius: 4px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 1rem;
+            letter-spacing: 0.05em;
+            margin-top: 1.5rem;
+        }
+
+        .label-topo {
+            color: #f59e0b;
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 14px;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .sub-label {
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 11px;
+            margin-bottom: 1rem;
+            display: block;
         }
     </style>
 </head>
 <body class="selection:bg-amber-500/30 selection:text-amber-200">
 
-    <nav class="p-8 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
+    <nav class="p-10 flex justify-between items-center">
         <div>
-            <h1 class="font-serif text-2xl tracking-widest text-white uppercase">Códice Silencioso</h1>
-            <p class="text-[10px] tracking-[0.3em] uppercase text-amber-500 font-medium">Pesquisa e Filosofia Bíblica</p>
-        </div>
-        <div class="hidden md:block text-[10px] tracking-widest text-zinc-400 uppercase font-serif italic">
-            Sertãozinho, SP — 2026
+            <h1 class="font-serif text-3xl tracking-widest text-white uppercase">Códice Silencioso</h1>
+            <p class="text-[10px] tracking-[0.4em] uppercase text-amber-500 font-medium">Pesquisa e Filosofia Bíblica</p>
         </div>
     </nav>
 
@@ -70,97 +79,71 @@
             <h2 class="font-serif text-5xl md:text-7xl text-white italic leading-tight">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
-            <div class="max-w-2xl mx-auto space-y-6">
-                <p class="text-zinc-400 text-lg font-light leading-relaxed">
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <p class="text-zinc-400 text-xl leading-relaxed">
                     Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido ocultado pelas camadas do tempo e da tradição.
                 </p>
-                <div class="py-8 px-10 border-l border-r border-white/5 bg-zinc-900/20 italic text-zinc-500 font-serif text-lg">
+                <div class="py-10 px-12 border-l border-r border-white/5 bg-zinc-900/10 italic text-zinc-500 font-serif text-xl">
                     "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas e pela experiência pessoal."
                 </div>
             </div>
-            <div class="pt-10">
-                <a href="#portal-1" class="px-10 py-4 bg-zinc-100 text-zinc-900 hover:bg-amber-500 hover:text-white transition-all duration-500 tracking-[0.2em] uppercase text-xs font-bold shadow-lg">
+            
+            <div class="pt-8">
+                <button class="border border-white/20 px-8 py-3 text-[10px] tracking-[0.4em] uppercase hover:bg-white hover:text-black transition-all">
                     Entrar nos Portais
-                </a>
+                </button>
             </div>
         </section>
 
-        <div class="h-40 flex items-center justify-center">
-            <div class="w-[1px] h-20 bg-gradient-to-b from-transparent via-amber-500/40 to-transparent"></div>
-        </div>
-
-        <section id="portal-1" class="py-20 space-y-16">
-            <div class="text-center">
-                <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-bold">Volume I</span>
-                <h3 class="font-serif text-4xl text-white mt-2">O Despertar do Viajante</h3>
-                <p class="text-zinc-400 text-sm mt-4 italic font-light tracking-widest uppercase">A natureza da continuidade consciente</p>
+        <section class="space-y-12">
+            <div class="text-center mb-20">
+                <span class="text-amber-500 text-[11px] tracking-[0.5em] uppercase font-bold">Volume I</span>
+                <h3 class="font-serif text-5xl text-white mt-4">O Despertar do Viajante</h3>
+                <p class="text-zinc-500 text-sm mt-4 italic tracking-widest uppercase">A natureza da continuidade consciente</p>
             </div>
 
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-6 shadow-2xl">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-amber-500 text-xs font-serif italic uppercase tracking-[0.2em]">Evidência 01</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Lucas 23:43</span>
+            <div class="card-evidencia">
+                <div class="flex justify-between items-center mb-10 border-b border-white/5 pb-4">
+                    <span class="label-topo">Evidência 01</span>
+                    <span class="text-zinc-600 text-[11px] tracking-widest uppercase">Lucas 23:43</span>
                 </div>
-                
-                <p class="text-zinc-500 uppercase text-[10px] font-medium tracking-widest">Sentido Restaurado (Análise de Pontuação)</p>
-                
-                <p class="font-serif text-zinc-100 text-lg leading-relaxed">
-                    Nesta parte onde o texto aborda o tempo da promessa, <span class="texto-sagrado-destaque">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>.
+                <span class="sub-label">Sentido Restaurado (Análise de Pontuação)</span>
+                <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
+                    Nesta parte onde o texto aborda o tempo da promessa, <span class="texto-destaque">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
                 </p>
-                
                 <span class="etiqueta-termo">Sēmeron (Hoje)</span>
             </div>
 
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-6 shadow-2xl">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-amber-500 text-xs font-serif italic uppercase tracking-[0.2em]">Evidência 02</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Termo: Paradeiso</span>
+            <div class="card-evidencia">
+                <div class="flex justify-between items-center mb-10 border-b border-white/5 pb-4">
+                    <span class="label-topo">Evidência 02</span>
+                    <span class="text-zinc-600 text-[11px] tracking-widest uppercase">Termo: Paradeiso</span>
                 </div>
-                
-                <p class="text-zinc-500 uppercase text-[10px] font-medium tracking-widest">Geografia da Transição Consciente</p>
-                
-                <p class="font-serif text-zinc-100 text-lg leading-relaxed">
-                    Nesta parte onde a raiz persa define o local, <span class="texto-sagrado-destaque">"Jardim Cercado: Um ambiente de transição e preservação da frequência."</span>.
+                <span class="sub-label">Análise Etimológica</span>
+                <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
+                    Nesta parte onde a raiz persa define o local, <span class="texto-destaque">"Jardim Cercado. Um ambiente de transição, frequência e preservação."</span>
                 </p>
-                
                 <span class="etiqueta-termo">Raiz: Pairidaeza</span>
             </div>
 
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-6 shadow-2xl border-l-4 border-l-amber-600">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-amber-500 text-xs font-serif italic uppercase tracking-[0.2em]">Evidência 03</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Eclesiastes 12:6</span>
+            <div class="card-evidencia">
+                <div class="flex justify-between items-center mb-10 border-b border-white/5 pb-4">
+                    <span class="label-topo">Evidência 04</span>
+                    <span class="text-zinc-600 text-[11px] tracking-widest uppercase">1 Coríntios 15:44</span>
                 </div>
-                
-                <p class="text-zinc-500 uppercase text-[10px] font-medium tracking-widest">A Natureza do Desengate Bioenergético</p>
-                
-                <p class="font-serif text-zinc-100 text-lg leading-relaxed">
-                    Nesta parte onde o texto técnico aborda o mecanismo, <span class="texto-sagrado-destaque">"Antes que se rompa o cordão de prata."</span>.
+                <span class="sub-label">A Natureza do Veículo</span>
+                <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
+                    Nesta parte onde o texto define os corpos, <span class="texto-destaque">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span> (1 Coríntios 15:44).
                 </p>
-                
-                <span class="etiqueta-termo">Cordão de Prata</span>
-            </div>
-
-            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-6 shadow-2xl border-l-4 border-l-amber-600">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-amber-500 text-xs font-serif italic uppercase tracking-[0.2em]">Evidência 04</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">1 Coríntios 15:44</span>
-                </div>
-                
-                <p class="text-zinc-500 uppercase text-[10px] font-medium tracking-widest">A Natureza do Veículo de Continuidade</p>
-                
-                <p class="font-serif text-zinc-100 text-lg leading-relaxed">
-                    Nesta parte onde o texto define os corpos operantes, <span class="texto-sagrado-destaque">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span>.
-                </p>
-                
                 <span class="etiqueta-termo">Soma Pneumatikon</span>
             </div>
 
         </section>
     </main>
 
-    <footer class="p-20 text-center border-t border-white/5 bg-zinc-900/30">
-        <p class="text-[10px] tracking-[0.5em] text-zinc-500 uppercase italic">Pesquisa Independente e Metafísica — 2026</p>
+    <footer class="p-20 text-center border-t border-white/5">
+        <p class="text-[10px] tracking-[0.5em] text-zinc-600 uppercase">Sertãozinho, SP — 2026</p>
     </footer>
 
 </body>
