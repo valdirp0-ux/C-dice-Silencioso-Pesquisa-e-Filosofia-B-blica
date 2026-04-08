@@ -43,6 +43,48 @@
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
+
+        /* Estilo do Botão do Portal com Efeito Hover e Foco Âmbar */
+        .btn-portal {
+            position: relative;
+            background: transparent;
+            color: #a1a1aa; /* zinc-400 */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-portal:hover {
+            color: #ffffff;
+            border-color: #f59e0b; /* amber-500 */
+            background-color: #f59e0b;
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Efeito de brilho pulsar no hover */
+        .btn-portal::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-portal:hover::before {
+            opacity: 1;
+            animation: pulse-light 1.5s infinite;
+        }
+
+        @keyframes pulse-light {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+
     </style>
 </head>
 <body class="selection:bg-amber-500/30 selection:text-amber-200">
@@ -60,12 +102,12 @@
     <main class="max-w-4xl mx-auto px-6 py-20 fade-in">
         
         <section class="text-center space-y-10 mb-32">
-            <h2 class="font-serif text-5xl md:text-7xl text-white italic leading-tight">
+            <h2 class="font-serif text-3xl md:text-5xl text-white italic leading-tight">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
             
             <div class="max-w-2xl mx-auto space-y-6">
-                <p class="text-zinc-400 text-lg font-light leading-relaxed">
+                <p class="text-zinc-400 text-base font-light leading-relaxed">
                     Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido ocultado pelas camadas do tempo e da tradição.
                 </p>
                 
@@ -75,7 +117,7 @@
             </div>
 
             <div class="pt-10">
-                <a href="#portal-1" class="px-12 py-4 border border-white/10 text-zinc-400 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-all duration-500 tracking-[0.3em] uppercase text-[10px] font-bold shadow-lg">
+                <a href="#portal-1" class="btn-portal inline-block px-12 py-4 tracking-[0.3em] uppercase text-[10px] font-bold">
                     Entrar nos Portais
                 </a>
             </div>
@@ -95,12 +137,12 @@
             <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
                 <div class="flex justify-between items-start border-b border-white/5 pb-4">
                     <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 01</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Lucas 23:43</span>
+                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium underline decoration-amber-500/30">Lucas 23:43</span>
                 </div>
                 <div class="space-y-8">
                     <h4 class="text-zinc-500 uppercase text-[10px] font-bold tracking-[0.3em]">Fontes de Comparação</h4>
                     <div class="fonte-antiga">
-                        <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Original Grego (Codex Vaticanus)</span>
+                        <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Original Grego</span>
                         <p class="italic text-2xl md:text-3xl leading-relaxed text-white">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
                     </div>
                     <div class="fonte-antiga">
@@ -108,41 +150,20 @@
                         <p class="italic text-xl md:text-2xl leading-relaxed">"Amen dico tibi hodie mecum eris in paradiso"</p>
                     </div>
                     <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
-                        Sentido Original Restaurado: <br>
+                        Sentido Restaurado: <br>
                         <span class="texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
                     </p>
                 </div>
             </div>
 
-            <div class="card-evidencia p-10 md:p-14 rounded-lg shadow-2xl">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 02</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Raiz: Pairidaeza</span>
-                </div>
-                <div class="fonte-antiga">
-                    <p class="italic text-3xl text-white">"Jardim Cercado"</p>
-                    <p class="text-xl texto-sagrado mt-2">Um ambiente de transição e preservação.</p>
-                </div>
+            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
+                <div class="font-serif italic text-lg text-zinc-500">"Jardim Cercado" - A geografia vibracional</div>
             </div>
-
-            <div class="card-evidencia p-10 md:p-14 rounded-lg shadow-2xl border-l-4 border-l-amber-600">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 03</span>
-                </div>
-                <div class="space-y-6 font-serif">
-                    <p class="text-zinc-400 italic text-xl">"antes que se rompa o cordão de prata."</p>
-                    <p class="text-2xl texto-sagrado">O elo bioenergético entre os corpos.</p>
-                </div>
+            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
+                <div class="font-serif italic text-lg text-zinc-500">"Cordão de Prata" - O desengate técnico</div>
             </div>
-
-            <div class="card-evidencia p-10 md:p-14 rounded-lg shadow-2xl border-l-4 border-l-amber-600">
-                <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 04</span>
-                </div>
-                <div class="space-y-6 font-serif">
-                    <p class="text-zinc-400 italic text-xl">"Semeia-se corpo animal, ressuscitará corpo espiritual."</p>
-                    <p class="text-2xl texto-sagrado">O veículo de luz já está presente.</p>
-                </div>
+            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
+                <div class="font-serif italic text-lg text-zinc-500">"Corpo Espiritual" - A vestimenta presente</div>
             </div>
 
         </section>
