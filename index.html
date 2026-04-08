@@ -17,60 +17,60 @@
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        /* CABEÇALHO E INTRODUÇÃO */
+        /* CABEÇALHO */
         .header-logo { padding: 3rem 0; text-align: center; }
-        .hero-section { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .subtitulo-topo { font-size: 14px; letter-spacing: 0.6em; } 
+
+        /* INTRODUÇÃO */
+        .hero-section { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .frase-impacto { font-size: 3.2rem; line-height: 1.1; max-width: 850px; } 
         
         .nota-autor {
             border: 1px solid rgba(245, 158, 11, 0.3);
             background: rgba(245, 158, 11, 0.02);
-            padding: 2rem;
-            max-width: 600px;
-            margin: 3rem 0;
+            padding: 3rem;
+            max-width: 800px; 
+            margin: 3.5rem 0;
             position: relative;
         }
-        .nota-label { 
-            position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-            background: #111113; padding: 0 1rem; color: #f59e0b; font-size: 0.6rem; letter-spacing: 0.3em; font-weight: 900;
-        }
+        .texto-objetivo { font-size: 1.3rem; line-height: 1.6; color: #d4d4d8; } 
 
-        /* BOTÃO CHAMATIVO "ENTRAR NOS PORTAIS" */
+        /* BOTÃO VIVO */
         .btn-portal { 
-            background-color: #f59e0b; /* Cor Dourada Sólida */
-            color: #111113; /* Texto Preto em Negrito */
-            padding: 1.2rem 3rem; 
+            position: relative;
+            background: linear-gradient(45deg, #b45309, #f59e0b, #fbbf24, #f59e0b);
+            background-size: 300% 300%;
+            color: #000; 
+            padding: 1.5rem 4rem; 
             text-transform: uppercase; 
-            letter-spacing: 0.4em; 
-            font-size: 0.75rem; 
+            letter-spacing: 0.5em; 
+            font-size: 0.9rem; 
             font-weight: 900; 
-            transition: all 0.4s; 
-            cursor: pointer; 
-            border: none; 
-            border-radius: 4px; /* Cantos Arredondados */
-            
-            /* EFEITO CHAMATIVO: Pulso e Brilho Dourado */
-            animation: pulse-gold 2s infinite; 
-            filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6)); 
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            animation: moveGradient 4s ease infinite, pulseGlow 2s infinite;
+            transition: transform 0.3s;
         }
 
-        .btn-portal:hover { 
-            transform: scale(1.05); /* Cresce suavemente */
-            filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.9)); /* Intensifica o brilho */
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* Definição da Animação de Pulso */
-        @keyframes pulse-gold {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px #f59e0b; }
+            50% { box-shadow: 0 0 30px #fbbf24; }
+            100% { box-shadow: 0 0 10px #f59e0b; }
         }
 
-        /* BARRA DE VOLUMES (STICKY) */
+        /* NAVEGAÇÃO DE VOLUMES */
         .volume-tabs {
-            display: none; 
+            display: none;
             justify-content: center;
             gap: 2.5rem;
-            background: rgba(17, 17, 19, 0.95);
+            background: rgba(17, 17, 19, 0.98);
             padding: 1.5rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             position: sticky;
@@ -78,50 +78,50 @@
             z-index: 100;
             backdrop-filter: blur(15px);
         }
-        .vol-link { color: rgba(255,255,255,0.4); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 8px; font-weight: 800; }
+        .vol-link { color: rgba(255,255,255,0.4); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 8px; font-weight: 800; }
         .vol-link.active { color: #f59e0b; border-bottom-color: #f59e0b; }
 
-        /* CARDS E CONTEÚDO TÉCNICO */
-        .volume-container { display: none; padding: 5rem 0; }
+        /* CONTEÚDO DOS VOLUMES */
+        .volume-container { display: none; padding: 6rem 0; }
         .volume-container.active { display: block; animation: fadeInUp 0.8s ease forwards; }
 
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* CARDS DE EVIDÊNCIA */
         .card-evidencia {
             background: rgba(39, 39, 42, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 8px;
-            padding: 3.5rem;
-            margin-bottom: 3rem;
-            max-width: 950px;
+            padding: 4rem;
+            margin-bottom: 4rem;
+            max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
         }
+        .label-evidencia { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.4em; font-size: 1.2rem; margin-bottom: 1.5rem; display: block; }
         .texto-traducao { color: #f59e0b; font-weight: 800; }
-        .label-evidencia { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.4em; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
     <header class="header-logo">
-        <h1 class="font-serif text-3xl tracking-[0.4em] text-white uppercase font-bold">Códice Silencioso</h1>
-        <p class="text-[10px] tracking-[0.6em] uppercase text-amber-500 font-bold mt-2">Pesquisa e Filosofia Bíblica</p>
+        <h1 class="font-serif text-4xl tracking-[0.4em] text-white uppercase font-bold">Códice Silencioso</h1>
+        <p class="subtitulo-topo uppercase text-amber-500 font-bold mt-2">Pesquisa e Filosofia Bíblica</p>
     </header>
 
     <main class="container-master">
         
         <section id="intro" class="hero-section">
-            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold italic leading-tight max-w-5xl mb-12">
+            <h2 class="font-serif frase-impacto text-white font-bold italic mb-12">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
             
-            <p class="max-w-2xl text-zinc-500 italic font-serif text-lg leading-relaxed mb-8">
+            <p class="max-w-3xl text-zinc-500 italic font-serif text-2xl leading-relaxed mb-10">
                 Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido oculto pelas camadas do tempo e da tradição.
             </p>
 
             <div class="nota-autor">
-                <span class="nota-label">NOTA DO AUTOR</span>
-                <p class="italic font-serif text-zinc-400 leading-relaxed">
+                <p class="italic font-serif texto-objetivo">
                     "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas através da análise técnica e da experiência pessoal."
                 </p>
             </div>
@@ -132,49 +132,63 @@
         <nav id="menu-volumes" class="volume-tabs">
             <div onclick="switchVol('vol1')" id="tab-v1" class="vol-link active">Volume I</div>
             <div onclick="switchVol('vol2')" id="tab-v2" class="vol-link">Volume II</div>
-            <div class="vol-link opacity-20 cursor-not-allowed">Volume III</div>
+            <div class="vol-link opacity-20 cursor-not-allowed">Volume III: Brevemente</div>
         </nav>
 
         <section id="vol1" class="volume-container">
-            <div class="text-center mb-20">
-                <span class="text-amber-500 text-[10px] tracking-[0.5em] uppercase font-black">Volume I</span>
-                <h2 class="font-serif text-5xl text-white mt-4 font-bold">O Despertar do Viajante</h2>
-                <p class="text-zinc-600 text-xs italic tracking-[0.4em] uppercase mt-4">A natureza da continuidade consciente</p>
+            <div class="text-center mb-24">
+                <span class="text-amber-500 text-xs tracking-[0.5em] uppercase font-black">Volume I</span>
+                <h2 class="font-serif text-6xl text-white mt-4 font-bold">O Despertar do Viajante</h2>
+                <p class="text-zinc-600 text-sm italic tracking-[0.4em] uppercase mt-6">A natureza da continuidade consciente</p>
             </div>
 
             <div class="card-evidencia">
-                <div class="flex justify-between items-center mb-8">
-                    <span class="label-evidencia">Evidência 01</span>
-                    <span class="text-zinc-600 text-[9px] font-bold uppercase tracking-widest">Lucas 23:43</span>
-                </div>
-                <p class="font-serif text-white text-4xl italic mb-8 leading-tight">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
+                <span class="label-evidencia">Evidência 01</span>
+                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
                 <div class="pt-8 border-t border-white/5">
                     <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Em verdade te digo hoje: estarás comigo no Paraíso."</span></p>
                 </div>
             </div>
 
             <div class="card-evidencia">
-                <span class="label-evidencia block mb-8">Evidência 02</span>
-                <p class="font-serif text-white text-3xl italic mb-6">A raiz persa define o local como um ambiente de preservação.</p>
+                <span class="label-evidencia">Evidência 02</span>
+                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">A raiz persa define o local como um "Jardim Cercado".</p>
                 <div class="pt-8 border-t border-white/5">
                     <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Um ambiente de transição, frequência e preservação."</span></p>
                 </div>
             </div>
 
-            </section>
+            <div class="card-evidencia">
+                <span class="label-evidencia">Evidência 03</span>
+                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"Não me detenhas, porque ainda não subi para meu Pai."</p>
+                <div class="pt-8 border-t border-white/5">
+                    <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"A continuidade imediata após a transição biológica."</span></p>
+                </div>
+            </div>
+
+            <div class="card-evidencia">
+                <span class="label-evidencia">Evidência 04</span>
+                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"Sema Pneumatikon": A semente espiritual.</p>
+                <div class="pt-8 border-t border-white/5">
+                    <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span></p>
+                </div>
+            </div>
+        </section>
 
         <section id="vol2" class="volume-container">
-            <div class="text-center mb-20">
-                <span class="text-amber-500 text-[10px] tracking-[0.5em] uppercase font-black">Volume II</span>
-                <h2 class="font-serif text-5xl text-white mt-4 font-bold">A Expansão da Percepção</h2>
+            <div class="text-center mb-24">
+                <span class="text-amber-500 text-xs tracking-[0.5em] uppercase font-black">Volume II</span>
+                <h2 class="font-serif text-6xl text-white mt-4 font-bold">A Expansão da Percepção</h2>
             </div>
-            </section>
+            <div class="card-evidencia text-center py-20">
+                <p class="text-zinc-500 italic">Pesquisa em processamento bibliográfico...</p>
+            </div>
+        </section>
 
     </main>
 
     <script>
         function liberarAcesso() {
-            // Esconde a intro e mostra o conteúdo técnico
             document.getElementById('intro').style.display = 'none';
             document.getElementById('menu-volumes').style.display = 'flex';
             document.getElementById('vol1').classList.add('active');
@@ -184,12 +198,10 @@
         function switchVol(id) {
             document.querySelectorAll('.volume-container').forEach(c => c.classList.remove('active'));
             document.querySelectorAll('.vol-link').forEach(l => l.classList.remove('active'));
-            
             document.getElementById(id).classList.add('active');
-            document.getElementById('tab-' + (id === 'vol1' ? 'v1' : 'v2')).classList.add('active');
+            document.getElementById('tab-' + (id === 'vol1' ? 'v1' : 'vol2')).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-
 </body>
 </html>
