@@ -22,7 +22,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             transition: all 0.5s ease;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         .card-evidencia:hover {
             border-color: rgba(245, 158, 11, 0.4);
@@ -31,14 +31,17 @@
         .texto-sagrado {
             color: #f59e0b;
             font-weight: 700;
-            text-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
         }
         .fonte-antiga {
             font-family: 'EB Garamond', serif;
-            color: #a1a1aa;
-            border-left: 2px solid #f59e0b;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
+            color: #d1d1d6;
+            border-left: 3px solid #f59e0b;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            background: rgba(245, 158, 11, 0.03);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
     </style>
 </head>
@@ -49,82 +52,82 @@
             <h1 class="font-serif text-2xl tracking-widest text-white uppercase">Códice Silencioso</h1>
             <p class="text-[10px] tracking-[0.3em] uppercase text-amber-500 font-medium">Pesquisa e Filosofia Bíblica</p>
         </div>
-        <div class="hidden md:block text-[10px] tracking-widest text-zinc-400 uppercase">
-            Sertãozinho, SP — 2026
+        <div class="hidden md:block text-[10px] tracking-widest text-zinc-400 uppercase font-serif italic">
+            "Investigando o invisível"
         </div>
     </nav>
 
     <main class="max-w-4xl mx-auto px-6 py-20 fade-in">
-        <section id="portal-1" class="py-10 space-y-16">
-            <div class="text-center">
+        
+        <section id="portal-1" class="space-y-20">
+            <div class="text-center mb-16">
                 <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-bold">Volume I</span>
-                <h3 class="font-serif text-4xl text-white mt-2">O Despertar do Viajante</h3>
-                <p class="text-zinc-400 text-sm mt-4 italic font-light">Escavando as camadas da tradução</p>
+                <h3 class="font-serif text-5xl text-white mt-2">O Despertar do Viajante</h3>
+                <p class="text-zinc-400 text-lg mt-4 italic font-light tracking-wide">Análise técnica das camadas textuais e metafísicas</p>
             </div>
 
-            <div class="card-evidencia p-10 rounded-lg space-y-8 shadow-2xl border-l-4 border-l-amber-600">
+            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl border-l-4 border-l-amber-600">
                 <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-xs font-serif italic text-amber-500/80 uppercase tracking-widest">Evidência 01</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Análise Comparativa</span>
+                    <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 01</span>
+                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium underline decoration-amber-500/30">Lucas 23:43</span>
                 </div>
 
-                <div class="space-y-6">
-                    <h4 class="text-zinc-500 uppercase text-[10px] font-medium tracking-widest">A Genealogia do Erro</h4>
+                <div class="space-y-8">
+                    <h4 class="text-zinc-500 uppercase text-[11px] font-bold tracking-[0.3em] mb-6">Fontes de Comparação</h4>
                     
                     <div class="fonte-antiga">
-                        <span class="text-[9px] uppercase tracking-tighter text-amber-600 font-bold block mb-1">Codex Vaticanus (Grego - Séc. IV)</span>
-                        <p class="italic text-lg">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
-                        <p class="text-[11px] text-zinc-500 mt-1">* Nota: No original não existiam vírgulas ou espaços modernos.</p>
+                        <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Original Grego (Codex Vaticanus)</span>
+                        <p class="italic text-2xl md:text-3xl leading-relaxed text-white">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
+                        <p class="text-xs text-zinc-500 mt-3 font-light italic">Sem pontuação original: A vírgula é uma decisão interpretativa posterior.</p>
                     </div>
 
                     <div class="fonte-antiga">
-                        <span class="text-[9px] uppercase tracking-tighter text-amber-600 font-bold block mb-1">Vulgata Latina (Séc. IV/V)</span>
-                        <p class="italic">"Amen dico tibi hodie mecum eris in paradiso"</p>
+                        <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Vulgata Latina (Séc. IV)</span>
+                        <p class="italic text-xl md:text-2xl leading-relaxed">"Amen dico tibi hodie mecum eris in paradiso"</p>
                     </div>
 
-                    <p class="font-serif text-zinc-100 text-lg leading-relaxed mt-6">
-                        Nesta análise, observamos que a posição da vírgula altera todo o destino da consciência: <br>
-                        <span class="texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
-                    </p>
+                    <div class="pt-6">
+                        <p class="font-serif text-zinc-100 text-2xl leading-relaxed">
+                            A restauração do sentido original: <br>
+                            <span class="texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 text-zinc-100 pt-6 border-t border-white/5">
-                    <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold w-fit">Tradução Dogmática</h4>
-                        <p class="font-serif leading-relaxed italic text-zinc-400">"...digo que hoje estarás..."</p>
-                        <p class="text-[11px] text-zinc-500">Implica transferência imediata pós-morte física.</p>
+                <div class="grid md:grid-cols-2 gap-12 text-zinc-100 pt-10 border-t border-white/10">
+                    <div class="space-y-4">
+                        <h4 class="text-[11px] uppercase tracking-widest text-zinc-500 font-bold">Tradução Comum</h4>
+                        <p class="font-serif text-lg leading-relaxed italic text-zinc-400">"...digo que <span class="text-zinc-200">hoje</span> estarás..."</p>
                     </div>
-                    <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold w-fit">Sentido Ontológico</h4>
-                        <p class="font-serif leading-relaxed text-xl texto-sagrado">"...digo hoje: estarás..."</p>
-                        <p class="text-[11px] text-zinc-400">A promessa é feita hoje; o tempo do "estar" é uma condição de frequência, não cronológica.</p>
+                    <div class="space-y-4">
+                        <h4 class="text-[11px] uppercase tracking-widest text-amber-600 font-bold">Análise do Códice</h4>
+                        <p class="font-serif text-xl leading-relaxed texto-sagrado">"...digo <span class="underline">hoje</span>: estarás..."</p>
                     </div>
                 </div>
             </div>
 
-            <div class="card-evidencia p-10 rounded-lg space-y-8 shadow-2xl">
+            <div class="card-evidencia p-10 md:p-14 rounded-lg space-y-10 shadow-2xl">
                 <div class="flex justify-between items-start border-b border-white/5 pb-4">
-                    <span class="text-xs font-serif italic text-amber-500/80 uppercase tracking-widest">Evidência 02</span>
-                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Raiz: Pairidaeza</span>
+                    <span class="text-sm font-serif italic text-amber-500 uppercase tracking-[0.2em]">Evidência 02</span>
+                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Termo: Paradeiso</span>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-3 border-r border-white/5 pr-4">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold w-fit">Visão Tradicional</h4>
-                        <p class="text-zinc-400 italic font-serif leading-relaxed">Um "céu" abstrato e longínquo.</p>
-                    </div>
-                    <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold w-fit">Geografia da Alma</h4>
-                        <p class="font-serif leading-relaxed text-xl texto-sagrado italic">"Jardim Cercado"</p>
-                        <p class="text-zinc-200 text-sm">Do Persa Antigo. Refere-se a um local de preservação e quarentena frequencial para a consciência.</p>
-                    </div>
+                
+                <div class="fonte-antiga">
+                    <span class="text-[10px] uppercase tracking-widest text-amber-500 font-bold block mb-2">Etimologia Persa</span>
+                    <p class="italic text-3xl text-white">Pairidaeza</p>
+                    <p class="text-xl texto-sagrado mt-2">"Jardim Cercado"</p>
                 </div>
+
+                <p class="text-zinc-300 text-lg leading-relaxed font-light">
+                    Não se trata de um "Céu" imaterial, mas de uma <span class="text-white font-medium">geografia de transição</span>. Um ambiente de preservação da consciência entre estados vibracionais.
+                </p>
             </div>
 
         </section>
     </main>
 
     <footer class="p-20 text-center border-t border-white/5 bg-zinc-900/30">
-        <p class="text-[10px] tracking-[0.5em] text-zinc-500 uppercase font-medium italic">Onde o texto termina, a busca começa.</p>
+        <p class="text-[10px] tracking-[0.5em] text-zinc-500 uppercase font-medium italic">Sertãozinho, SP — Laboratório da Consciência</p>
     </footer>
 
 </body>
