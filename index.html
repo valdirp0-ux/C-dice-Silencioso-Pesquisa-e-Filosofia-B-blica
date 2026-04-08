@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Códice Silencioso | Pesquisa e Filosofia Bíblica</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
@@ -26,6 +26,12 @@
         .card-evidencia:hover {
             border-color: rgba(245, 158, 11, 0.4);
             background: rgba(39, 39, 42, 0.8);
+        }
+        /* Classe específica para destaque bíblico */
+        .texto-sagrado {
+            color: #f59e0b; /* Amber 500 */
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
         }
     </style>
 </head>
@@ -75,13 +81,13 @@
                     <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Lucas 23:43</span>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 text-zinc-100">
-                    <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold border-b border-zinc-800 w-fit">Filtro Dogmático</h4>
-                        <p class="text-zinc-400 italic font-serif leading-relaxed">"Em verdade te digo que hoje estarás comigo no Paraíso."</p>
+                    <div class="space-y-3 border-r border-white/5 pr-4">
+                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold w-fit">Filtro Dogmático</h4>
+                        <p class="font-serif leading-relaxed italic text-zinc-400">"Em verdade te digo que hoje estarás comigo no Paraíso."</p>
                     </div>
                     <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-500 font-bold border-b border-amber-900/30 w-fit">Sentido Original</h4>
-                        <p class="text-white font-serif leading-relaxed text-lg">"Em verdade te digo hoje: estarás comigo no Paraíso."</p>
+                        <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold w-fit">Sentido Original</h4>
+                        <p class="font-serif leading-relaxed text-xl texto-sagrado">"Em verdade te digo hoje: estarás comigo no Paraíso."</p>
                         <span class="inline-block text-[9px] bg-amber-500 text-zinc-900 px-2 py-0.5 rounded font-bold uppercase">Sēmeron (Hoje)</span>
                     </div>
                 </div>
@@ -93,14 +99,15 @@
                     <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Termo: Paradeiso</span>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold border-b border-zinc-800 w-fit">Visão Tradicional</h4>
+                    <div class="space-y-3 border-r border-white/5 pr-4">
+                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold w-fit">Visão Tradicional</h4>
                         <p class="text-zinc-400 italic font-serif leading-relaxed">Um destino final abstrato; um "céu" de descanso passivo.</p>
                     </div>
                     <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-500 font-bold border-b border-amber-900/30 w-fit">Análise Etimológica</h4>
-                        <p class="text-white font-serif leading-relaxed text-lg">Do Persa: "Jardim Cercado". Um ambiente de transição e frequência.</p>
-                        <span class="inline-block text-[9px] bg-amber-500 text-zinc-900 px-2 py-0.5 rounded font-bold uppercase">Raiz: Pairidaeza</span>
+                        <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold w-fit">Análise Etimológica</h4>
+                        <p class="font-serif leading-relaxed text-xl texto-sagrado italic">"Jardim Cercado"</p>
+                        <p class="text-zinc-200 text-sm">Um ambiente de transição, frequência e preservação da consciência.</p>
+                        <span class="inline-block text-[9px] bg-amber-500 text-zinc-900 px-2 py-0.5 rounded font-bold uppercase tracking-tighter">Raiz: Pairidaeza</span>
                     </div>
                 </div>
             </div>
@@ -111,18 +118,19 @@
                     <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Eclesiastes 12:6</span>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold border-b border-zinc-800 w-fit">O Simbolismo</h4>
+                    <div class="space-y-3 border-r border-white/5 pr-4">
+                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold w-fit">O Simbolismo</h4>
                         <p class="text-zinc-400 italic font-serif leading-relaxed">"Antes que se rompa o cordão de prata, e se quebre o copo de ouro..."</p>
                     </div>
                     <div class="space-y-3">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-500 font-bold border-b border-amber-900/30 w-fit">Conexão Bioenergética</h4>
-                        <p class="text-white font-serif leading-relaxed text-lg">O 'link' fluídico entre o corpo físico e o corpo espiritual (*Soma Pneumatikon*).</p>
-                        <span class="inline-block text-[9px] bg-amber-500 text-zinc-900 px-2 py-0.5 rounded font-bold uppercase">Mecanismo de Desengate</span>
+                        <h4 class="text-[10px] uppercase tracking-widest text-amber-600 font-bold w-fit">Anatomia Espiritual</h4>
+                        <p class="font-serif leading-relaxed text-xl texto-sagrado">"...antes que se rompa o cordão de prata."</p>
+                        <p class="text-zinc-200 text-sm">O elo bioenergético entre o físico e o espiritual.</p>
+                        <span class="inline-block text-[9px] bg-amber-500 text-zinc-900 px-2 py-0.5 rounded font-bold uppercase">Bioenergia</span>
                     </div>
                 </div>
                 <div class="pt-6 text-sm text-zinc-400 leading-relaxed border-t border-white/5">
-                    <strong class="text-amber-500/80">Provocação:</strong> O texto bíblico descreve o fim da vida biológica não como um evento místico súbito, mas como o rompimento de uma conexão técnica. Se esse cordão existe, a consciência nunca esteve "dentro" do corpo, mas apenas "conectada" a ele.
+                    <strong class="text-amber-500/80 uppercase text-[10px] tracking-widest">Provocação:</strong> Se esse cordão existe, a consciência nunca esteve "dentro" do corpo, mas apenas "conectada" a ele por um mecanismo de engenharia espiritual.
                 </div>
             </div>
         </section>
