@@ -12,46 +12,50 @@
             background-color: #111113; 
             color: #e4e4e7; 
             background-image: radial-gradient(circle at top, #1c1c1f 0%, #111113 100%);
-            scroll-behavior: smooth;
         }
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        /* MENU DE ABAS FIXO */
-        .tabs-container {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(17, 17, 19, 0.8);
-            backdrop-filter: blur(15px);
+        /* Estilo das Abas de Volume */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1rem 0;
+            margin-bottom: 3rem;
         }
-
-        .tab-link {
-            font-size: 0.65rem;
+        .tab-btn {
+            padding: 1rem 2rem;
+            color: rgba(255, 255, 255, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: rgba(255, 255, 255, 0.5);
-            padding: 0.5rem 1.5rem;
-            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: all 0.3s;
             border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            color: #f59e0b;
+            border-bottom-color: #f59e0b;
         }
 
-        .tab-link:hover, .tab-link.active {
-            color: #f59e0b;
-            border-bottom: 2px solid #f59e0b;
+        /* Controle de Visibilidade */
+        .volume-content { display: none; }
+        .volume-content.active { display: block; animation: fadeIn 0.5s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .card-evidencia {
             background: rgba(39, 39, 42, 0.4);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 3rem;
-            width: 100%;
         }
 
         .texto-traducao-final { color: #f59e0b; font-weight: 800; }
@@ -64,10 +68,9 @@
             margin-top: 1rem; 
             border-left: 2px solid #f59e0b; 
             padding-left: 1.2rem; 
-            max-width: 850px; 
         }
 
-        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 0.8rem 2rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.65rem; transition: all 0.3s ease; color: rgba(255, 255, 255, 0.6); text-decoration: none; display: inline-block; }
+        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 0.8rem 2rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.65rem; color: rgba(255, 255, 255, 0.6); text-decoration: none; display: inline-block; cursor: pointer; }
         .btn-portal:hover { background: white; color: black; border-color: white; }
     </style>
 </head>
@@ -80,86 +83,97 @@
 
     <main class="container-master py-6">
         
-        <section class="text-center mb-16 pt-10">
+        <section id="intro-section" class="text-center mb-16 pt-10">
             <h2 class="font-serif text-5xl md:text-7xl text-white font-bold italic leading-tight max-w-5xl mx-auto mb-10">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
-            <p class="text-zinc-400 text-xl leading-relaxed font-light max-w-3xl mx-auto mb-12">
-                Investigação técnica sobre as camadas de tradução que moldaram nossa percepção da morte.
-            </p>
-            
             <div class="space-y-6 max-w-2xl mx-auto border-t border-white/5 pt-12 text-zinc-500 italic font-serif text-lg leading-relaxed">
                 <p>"Não buscamos impor uma crença, mas instigar a busca por respostas através da análise técnica e da experiência pessoal."</p>
-                <p>"O conhecimento compartilhado é fruto de anos de investigação sobre os textos que moldaram nossa percepção do invisível."</p>
             </div>
-            
             <div class="mt-12 pt-10 border-t border-white/5">
-                <a href="#volume-1" class="btn-portal">Entrar nos Portais</a>
+                <button onclick="switchTab('vol1')" class="btn-portal">Entrar nos Portais</button>
             </div>
         </section>
 
-        <div class="tabs-container flex justify-center gap-8 mb-12">
-            <a href="#volume-1" class="tab-link">Volume I: O Despertar</a>
-            <a href="#volume-2" class="tab-link">Volume II: Expansão</a>
-            <a href="#" class="tab-link opacity-20 cursor-not-allowed">Volume III: Brevemente</a>
+        <div class="tabs-nav">
+            <div id="btn-vol1" class="tab-btn active" onclick="switchTab('vol1')">Volume I</div>
+            <div id="btn-vol2" class="tab-btn" onclick="switchTab('vol2')">Volume II</div>
+            <div class="tab-btn opacity-20 cursor-not-allowed">Volume III</div>
         </div>
 
-        <div id="volume-1" class="scroll-mt-32 text-center mb-16">
-            <span class="text-amber-500 text-xs tracking-[0.6em] uppercase font-black">Volume I</span>
-            <h2 class="font-serif text-5xl text-white mt-4 font-bold">O Despertar do Viajante</h2>
-            <p class="text-zinc-600 text-sm mt-4 italic tracking-[0.3em] uppercase">A natureza da continuidade consciente</p>
-        </div>
-
-        <div class="card-evidencia">
-            <div class="flex justify-between items-center mb-6">
-                <span class="label-topo">Evidência 01</span>
-                <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Lucas 23:43</span>
+        <section id="vol1" class="volume-content active">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl text-white font-bold">O Despertar do Viajante</h2>
+                <p class="text-zinc-600 text-sm mt-2 italic tracking-widest uppercase">A natureza da continuidade consciente</p>
             </div>
-            <div class="space-y-6 mb-8">
-                <div>
-                    <span class="text-amber-500 text-[9px] uppercase tracking-widest font-black block mb-2">Original Grego & Latim</span>
+
+            <div class="card-evidencia">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="label-topo">Evidência 01</span>
+                    <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Lucas 23:43</span>
+                </div>
+                <div class="space-y-6 mb-8">
                     <p class="font-serif text-white text-3xl italic leading-tight">"amēn soi legō sēmeron..."</p>
-                    <p class="font-serif text-zinc-400 text-2xl italic">"Amen dico tibi hodie..."</p>
+                    <div class="contexto-guia">
+                        <strong>Contexto:</strong> Análise da pontuação original: "Digo-te hoje, estarás comigo".
+                    </div>
                 </div>
-                <div class="contexto-guia">
-                    <strong>Contexto:</strong> A pontuação original foca no ato de Cristo declarar a promessa naquele dia ("te digo hoje").
+                <div class="pt-6 border-t border-white/5">
+                    <p class="font-serif text-2xl">
+                        Tradução: <span class="texto-traducao-final">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
+                    </p>
                 </div>
             </div>
-            <div class="pt-6 border-t border-white/5">
-                <p class="font-serif text-2xl">
-                    Tradução: <span class="texto-traducao-final">"Em verdade te digo hoje: estarás comigo no Paraíso." - Lucas 23:43</span>
-                </p>
-            </div>
-        </div>
+            </section>
 
-        <div id="volume-2" class="scroll-mt-32 text-center mb-16 pt-20 border-t border-white/5">
-            <span class="text-amber-500 text-xs tracking-[0.6em] uppercase font-black">Volume II</span>
-            <h2 class="font-serif text-5xl text-white mt-4 font-bold">A Expansão da Percepção</h2>
-            <p class="text-zinc-600 text-sm mt-4 italic tracking-[0.3em] uppercase">Mecânica Dimensional e a Trindade Humana</p>
-        </div>
-
-        <div class="card-evidencia">
-            <div class="flex justify-between items-center mb-6">
-                <span class="label-topo">Evidência 05</span>
-                <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">1 Tessalonicenses 5:23</span>
+        <section id="vol2" class="volume-content">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl text-white font-bold">A Expansão da Percepção</h2>
+                <p class="text-zinc-600 text-sm mt-2 italic tracking-widest uppercase">Mecânica Dimensional e a Trindade Humana</p>
             </div>
-            <div class="space-y-6 mb-8">
-                <div>
-                    <span class="text-amber-500 text-[9px] uppercase tracking-widest font-black block mb-2">Original Grego</span>
+
+            <div class="card-evidencia">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="label-topo">Evidência 05</span>
+                    <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">1 Tessalonicenses 5:23</span>
+                </div>
+                <div class="space-y-6 mb-8">
                     <p class="font-serif text-white text-3xl italic leading-tight">"pneuma kai hē psychē kai to sōma..."</p>
+                    <div class="contexto-guia">
+                        <strong>Contexto:</strong> A diferenciação técnica entre o espírito (Pneuma) e a alma (Psychē).
+                    </div>
                 </div>
-                <div class="contexto-guia">
-                    <strong>Contexto:</strong> O texto estabelece a anatomia oculta do ser, diferenciando o espírito (Pneuma) da alma (Psychē).
+                <div class="pt-6 border-t border-white/5">
+                    <p class="font-serif text-2xl">
+                        Tradução: <span class="texto-traducao-final">"E todo o vosso espírito, alma e corpo, sejam preservados íntegros."</span>
+                    </p>
                 </div>
             </div>
-            <div class="pt-6 border-t border-white/5">
-                <p class="font-serif text-2xl">
-                    Tradução: <span class="texto-traducao-final">"E todo o vosso espírito, alma e corpo, sejam preservados íntegros." - 1 Tess. 5:23</span>
-                </p>
-            </div>
-        </div>
+            </section>
 
-        </main>
+    </main>
+
+    <script>
+        function switchTab(tabId) {
+            // Esconde todos os conteúdos
+            document.querySelectorAll('.volume-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Remove classe ativa de todos os botões
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostra o conteúdo selecionado e ativa o botão
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('active');
+
+            // Rola suavemente para o início do conteúdo se estiver na intro
+            if(tabId) {
+                document.querySelector('.tabs-nav').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 
     <footer class="p-12 text-center border-t border-white/5 opacity-40">
         <p class="text-[9px] tracking-[0.8em] text-zinc-500 uppercase font-black italic">Sertãozinho, SP</p>
