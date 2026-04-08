@@ -14,118 +14,127 @@
             background-image: radial-gradient(circle at top, #1c1c1f 0%, #111113 100%);
         }
         .font-serif { font-family: 'EB Garamond', serif; }
-        .container-master { max-width: 1300px; margin: 0 auto; padding: 0 2rem; }
+        .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
         .card-evidencia {
-            background: rgba(39, 39, 42, 0.5);
+            background: rgba(39, 39, 42, 0.4);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 4rem;
-            margin-bottom: 5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2.5rem; /* Reduzido de 4rem para aproximar o conteúdo */
+            margin-bottom: 3rem; /* Reduzido de 5rem para compactar a página */
             width: 100%;
         }
 
         .texto-traducao-final { color: #f59e0b; font-weight: 800; }
-        .label-topo { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.4em; }
-        .contexto-guia { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; line-height: 1.6; margin-top: 1.5rem; border-left: 1px solid #f59e0b; padding-left: 1.5rem; max-width: 700px; }
+        .label-topo { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.3em; font-size: 1.25rem; }
+        
+        .contexto-guia { 
+            color: rgba(255, 255, 255, 0.6); 
+            font-size: 0.85rem; 
+            line-height: 1.5; 
+            margin-top: 1rem; 
+            border-left: 2px solid #f59e0b; 
+            padding-left: 1.2rem; 
+            max-width: 800px; 
+        }
 
-        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem 2.5rem; text-transform: uppercase; letter-spacing: 0.5em; font-size: 0.7rem; transition: all 0.3s ease; color: rgba(255, 255, 255, 0.6); text-decoration: none; display: inline-block; }
+        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 0.8rem 2rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.65rem; transition: all 0.3s ease; color: rgba(255, 255, 255, 0.6); text-decoration: none; display: inline-block; }
         .btn-portal:hover { background: white; color: black; border-color: white; }
     </style>
 </head>
 <body>
 
-    <nav class="p-10 flex justify-between items-center container-master">
+    <nav class="p-8 flex justify-between items-center container-master">
         <div>
-            <h1 class="font-serif text-4xl tracking-[0.3em] text-white uppercase font-bold">Códice Silencioso</h1>
-            <p class="text-[10px] tracking-[0.5em] uppercase text-amber-500 font-bold mt-2">Pesquisa e Filosofia Bíblica</p>
+            <h1 class="font-serif text-3xl tracking-[0.2em] text-white uppercase font-bold">Códice Silencioso</h1>
+            <p class="text-[9px] tracking-[0.4em] uppercase text-amber-500 font-bold mt-1">Pesquisa e Filosofia Bíblica</p>
         </div>
     </nav>
 
-    <main class="container-master py-10">
+    <main class="container-master py-6">
         
-        <section class="text-center space-y-16 mb-20 pt-20">
-            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold italic leading-tight max-w-5xl mx-auto">
+        <section class="text-center mb-16 pt-12">
+            <h2 class="font-serif text-4xl md:text-6xl text-white font-bold italic leading-tight max-w-4xl mx-auto mb-6">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
-            <p class="text-zinc-400 text-xl leading-relaxed font-light max-w-3xl mx-auto">
-                Uma investigação técnica sobre as camadas de tradução que moldaram nossa percepção da morte e da continuidade.
+            <p class="text-zinc-400 text-lg leading-relaxed font-light max-w-2xl mx-auto">
+                Investigação técnica sobre as camadas de tradução que moldaram nossa percepção da morte.
             </p>
         </section>
 
         <div class="card-evidencia">
-            <div class="flex justify-between items-center mb-10">
-                <span class="label-topo text-2xl">Evidência 01</span>
-                <span class="text-zinc-600 text-xs font-bold uppercase tracking-widest">Lucas 23:43</span>
+            <div class="flex justify-between items-center mb-6">
+                <span class="label-topo">Evidência 01</span>
+                <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Lucas 23:43</span>
             </div>
-            <div class="space-y-10 mb-16">
+            <div class="space-y-6 mb-8">
                 <div>
-                    <span class="text-amber-500 text-[10px] uppercase tracking-widest font-black block mb-4">Original Grego & Latim</span>
-                    <p class="font-serif text-white text-4xl italic leading-tight mb-4">"amēn soi legō sēmeron..."</p>
-                    <p class="font-serif text-zinc-400 text-3xl italic">"Amen dico tibi hodie..."</p>
+                    <span class="text-amber-500 text-[9px] uppercase tracking-widest font-black block mb-2">Fontes Originais</span>
+                    <p class="font-serif text-white text-3xl italic leading-tight">"amēn soi legō sēmeron..."</p>
+                    <p class="font-serif text-zinc-400 text-2xl italic">"Amen dico tibi hodie..."</p>
                 </div>
                 <div class="contexto-guia">
-                    <strong>Contexto:</strong> Nas versões tradicionais, a vírgula é colocada ANTES da palavra "hoje", sugerindo que a pessoa iria ao paraíso naquele instante. Contudo, no original, a ênfase está no ato de Cristo declarar a promessa naquele dia específico, mudando radicalmente o entendimento sobre o estado imediato pós-morte.
+                    <strong>Contexto:</strong> A pontuação original foca no dia da promessa, não na ida imediata ao paraíso.
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/5">
-                <p class="font-serif text-3xl">
+            <div class="pt-6 border-t border-white/5">
+                <p class="font-serif text-2xl">
                     Tradução: <span class="texto-traducao-final">"Em verdade te digo hoje: estarás comigo no Paraíso." - Lucas 23:43</span>
                 </p>
             </div>
         </div>
 
         <div class="card-evidencia">
-            <div class="flex justify-between items-center mb-10">
-                <span class="label-topo text-2xl">Evidência 02</span>
-                <span class="text-zinc-600 text-xs font-bold uppercase tracking-widest">Etimologia: Paradeiso</span>
+            <div class="flex justify-between items-center mb-6">
+                <span class="label-topo">Evidência 02</span>
+                <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Etimologia</span>
             </div>
-            <div class="space-y-10 mb-10">
-                <p class="font-serif text-zinc-300 text-4xl italic">Do Persa: "Pairidaeza"</p>
+            <div class="space-y-6 mb-8">
+                <p class="font-serif text-zinc-300 text-3xl italic">Persa: "Pairidaeza" (Jardim Cercado)</p>
                 <div class="contexto-guia">
-                    <strong>Contexto:</strong> A palavra paraíso não descreve um céu final, mas um "jardim cercado" ou reduto de proteção. É um conceito de zona de quarentena ou transição frequencial, onde a consciência é preservada antes de seguir para dimensões mais elevadas.
+                    <strong>Contexto:</strong> O termo descreve um local de quarentena e preservação da consciência.
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/5">
-                <p class="font-serif text-3xl">
+            <div class="pt-6 border-t border-white/5">
+                <p class="font-serif text-2xl">
                     Tradução: <span class="texto-traducao-final">"Um ambiente de transição, frequência e preservação."</span>
                 </p>
             </div>
         </div>
 
         <div class="card-evidencia">
-            <div class="flex justify-between items-center mb-10">
-                <span class="label-topo text-2xl">Evidência 03</span>
-                <span class="text-zinc-600 text-xs font-bold uppercase tracking-widest">João 20:17</span>
+            <div class="flex justify-between items-center mb-6">
+                <span class="label-topo">Evidência 03</span>
+                <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">João 20:17</span>
             </div>
-            <div class="space-y-10 mb-10">
-                <p class="font-serif text-zinc-100 text-4xl font-bold">"Ainda não subi para meu Pai."</p>
+            <div class="space-y-6 mb-8">
+                <p class="font-serif text-zinc-100 text-3xl font-bold">"Ainda não subi para meu Pai."</p>
                 <div class="contexto-guia">
-                    <strong>Contexto:</strong> Se Cristo estivesse no céu imediatamente após a morte, essa frase dita após a ressurreição seria contraditória. Isso prova que o "Paraíso" mencionado anteriormente era um estado intermediário e não a morada final divina.
+                    <strong>Contexto:</strong> Confirma que o Paraíso é um estado intermediário, não a morada divina final.
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/5">
-                <p class="font-serif text-3xl">
+            <div class="pt-6 border-t border-white/5">
+                <p class="font-serif text-2xl">
                     Tradução: <span class="texto-traducao-final">"Não me detenhas, porque ainda não subi para meu Pai." - João 20:17</span>
                 </p>
             </div>
         </div>
 
         <div class="card-evidencia">
-            <div class="flex justify-between items-center mb-10">
-                <span class="label-topo text-2xl">Evidência 04</span>
-                <span class="text-zinc-600 text-xs font-bold uppercase tracking-widest">1 Coríntios 15:44</span>
+            <div class="flex justify-between items-center mb-6">
+                <span class="label-topo">Evidência 04</span>
+                <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">1 Coríntios 15:44</span>
             </div>
-            <div class="space-y-10 mb-10">
-                <p class="font-serif text-zinc-100 text-4xl font-bold">"Soma Pneumatikon"</p>
+            <div class="space-y-6 mb-8">
+                <p class="font-serif text-zinc-100 text-3xl font-bold">"Soma Pneumatikon"</p>
                 <div class="contexto-guia">
-                    <strong>Contexto:</strong> Paulo descreve aqui a transição biológica da consciência. O "corpo espiritual" não é algo imaterial ou abstrato, mas um veículo de outra frequência (pneumatikon) que ressuscita (desperta) após o encerramento do ciclo animal.
+                    <strong>Contexto:</strong> Define o novo veículo de consciência que desperta após o ciclo animal.
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/5">
-                <p class="font-serif text-3xl">
+            <div class="pt-6 border-t border-white/5">
+                <p class="font-serif text-2xl">
                     Tradução: <span class="texto-traducao-final">"Semeia-se corpo animal, ressuscitará corpo espiritual." - 1 Coríntios 15:44</span>
                 </p>
             </div>
@@ -133,8 +142,8 @@
 
     </main>
 
-    <footer class="p-20 text-center border-t border-white/5 opacity-40">
-        <p class="text-[10px] tracking-[1em] text-zinc-500 uppercase font-black italic">Investigando o Invisível — Sertãozinho, SP</p>
+    <footer class="p-12 text-center border-t border-white/5 opacity-40">
+        <p class="text-[9px] tracking-[0.8em] text-zinc-500 uppercase font-black italic">Sertãozinho, SP</p>
     </footer>
 
 </body>
