@@ -5,109 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Códice Silencioso | Pesquisa e Filosofia Bíblica</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #d4d4d8; }
+        /* Paleta de cores atualizada para mais claridade */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #18181b; /* Cinza zinco mais claro que o preto */
+            color: #e4e4e7; 
+            background-image: radial-gradient(circle at top, #27272a 0%, #18181b 100%);
+        }
         .font-serif { font-family: 'EB Garamond', serif; }
         .fade-in { animation: fadeIn 2s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .card-evidencia {
+            background: rgba(39, 39, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+        .card-evidencia:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            background: rgba(39, 39, 42, 0.8);
+        }
     </style>
 </head>
 <body class="selection:bg-amber-500/30 selection:text-amber-200">
 
-    <nav class="p-8 border-b border-zinc-900 flex justify-between items-center">
+    <nav class="p-8 border-b border-white/5 flex justify-between items-center bg-zinc-900/50">
         <div>
-            <h1 class="font-serif text-xl tracking-widest text-zinc-100 uppercase">Códice Silencioso</h1>
-            <p class="text-[10px] tracking-[0.3em] uppercase text-amber-500/60">Pesquisa e Filosofia Bíblica</p>
+            <h1 class="font-serif text-2xl tracking-widest text-white uppercase">Códice Silencioso</h1>
+            <p class="text-[10px] tracking-[0.3em] uppercase text-amber-500 font-medium">Pesquisa e Filosofia Bíblica</p>
         </div>
-        <div class="hidden md:block text-[10px] tracking-widest text-zinc-600 uppercase">
+        <div class="hidden md:block text-[10px] tracking-widest text-zinc-400 uppercase">
             Sertãozinho, SP — 2026
         </div>
     </nav>
 
     <main class="max-w-4xl mx-auto px-6 py-20 fade-in">
         <section class="text-center space-y-12">
-            <h2 class="font-serif text-4xl md:text-6xl text-zinc-100 italic">
-                "A verdade não é uma herança que se recebe pronta..."
+            <h2 class="font-serif text-4xl md:text-6xl text-white italic leading-tight">
+                "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
             
-            <div class="space-y-6 text-lg md:text-xl font-light text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-                <p>Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido ocultado pelas camadas do tempo e da tradição.</p>
+            <div class="space-y-6 text-lg md:text-xl font-light text-zinc-300 leading-relaxed max-w-2xl mx-auto">
+                <p>Bem-vindo ao Laboratório da Consciência. Um espaço de clareza para quem busca o real sentido ocultado pelas camadas do tempo.</p>
             </div>
 
-            <div class="bg-zinc-900/40 p-8 border-l border-amber-500/20 italic text-zinc-500 text-sm md:text-base max-w-xl mx-auto">
+            <div class="bg-amber-500/5 p-8 border-l-2 border-amber-500/40 italic text-zinc-400 text-sm md:text-base max-w-xl mx-auto shadow-inner">
                 "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas e pela experiência pessoal."
             </div>
 
             <div class="pt-10">
-                <a href="#portal-1" class="px-10 py-4 border border-zinc-800 text-zinc-500 hover:border-amber-500/40 hover:text-amber-200 transition-all duration-700 tracking-[0.2em] uppercase text-xs">
+                <a href="#portal-1" class="px-10 py-4 bg-zinc-100 text-zinc-900 hover:bg-amber-500 hover:text-white transition-all duration-500 tracking-[0.2em] uppercase text-xs font-bold shadow-lg">
                     Entrar nos Portais
                 </a>
             </div>
         </section>
 
         <div class="h-40 flex items-center justify-center">
-            <div class="w-[1px] h-20 bg-gradient-to-b from-transparent via-zinc-800 to-transparent"></div>
+            <div class="w-[1px] h-20 bg-gradient-to-b from-transparent via-amber-500/40 to-transparent"></div>
         </div>
 
         <section id="portal-1" class="py-20 space-y-16">
             <div class="text-center">
-                <span class="text-amber-500/50 text-[10px] tracking-[0.4em] uppercase">Volume I</span>
-                <h3 class="font-serif text-3xl text-zinc-100 mt-2">O Despertar do Viajante</h3>
-                <p class="text-zinc-500 text-sm mt-4 italic">A natureza da continuidade consciente</p>
+                <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-bold">Volume I</span>
+                <h3 class="font-serif text-4xl text-white mt-2">O Despertar do Viajante</h3>
+                <p class="text-zinc-400 text-sm mt-4 italic font-light">A natureza da continuidade consciente</p>
             </div>
 
-            <div class="bg-zinc-900/30 border border-zinc-800/50 p-10 rounded-sm space-y-8 shadow-2xl">
-                <div class="flex justify-between items-start border-b border-zinc-800 pb-4">
-                    <span class="text-xs font-serif italic text-zinc-500">Evidência 01</span>
-                    <span class="text-xs tracking-widest text-zinc-600 uppercase">Lucas 23:43</span>
+            <div class="card-evidencia p-10 rounded-lg space-y-8 shadow-2xl">
+                <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                    <span class="text-xs font-serif italic text-amber-500/80 uppercase tracking-widest">Evidência 01</span>
+                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Lucas 23:43</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 text-zinc-100">
+                    <div class="space-y-3">
+                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold border-b border-zinc-800 w-fit">Filtro Dogmático</h4>
+                        <p class="text-zinc-400 italic font-serif leading-relaxed">"Em verdade te digo que hoje estarás comigo no Paraíso."</p>
+                    </div>
+                    <div class="space-y-3">
+                        <h4 class="text-[10px] uppercase tracking-widest text-amber-500 font-bold border-b border-amber-900/30 w-fit">Sentido Original</h4>
+                        <p class="text-white font-serif leading-relaxed text-lg">"Em verdade te digo hoje: estarás comigo no Paraíso."</p>
+                        <span class="inline-block text-[9px] bg-amber-500 text-zinc-900 px-2 py-0.5 rounded font-bold uppercase">Sēmeron (Hoje)</span>
+                    </div>
+                </div>
+
+                <div class="pt-6 text-sm text-zinc-400 leading-relaxed border-t border-white/5">
+                    <strong class="text-amber-500/80">Provocação:</strong> No grego original não existia pontuação. Se movermos a vírgula, a promessa torna-se uma transição imediata. O que isso muda na sua percepção?
+                </div>
+            </div>
+
+            <div class="card-evidencia p-10 rounded-lg space-y-8 shadow-2xl">
+                <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                    <span class="text-xs font-serif italic text-amber-500/80 uppercase tracking-widest">Evidência 02</span>
+                    <span class="text-xs tracking-widest text-zinc-500 uppercase font-medium">Termo: Paradeiso</span>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-2">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">Filtro Dogmático</h4>
-                        <p class="text-zinc-500 italic font-serif">"Em verdade te digo que hoje estarás comigo no Paraíso."</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-500/70 font-bold">Sentido Original</h4>
-                        <p class="text-zinc-200 font-serif">"Em verdade te digo hoje: estarás comigo no Paraíso."</p>
-                        <span class="text-[9px] bg-amber-500/10 text-amber-500/60 px-2 py-0.5 rounded">Termo: Sēmeron (Hoje)</span>
-                    </div>
-                </div>
-
-                <div class="pt-6 text-sm text-zinc-500 leading-relaxed border-t border-zinc-800/50">
-                    <strong class="text-zinc-400">Provocação:</strong> No grego original não existia pontuação. Se movermos a vírgula, a promessa deixa de ser para um futuro remoto e torna-se uma transição imediata. O que isso muda na sua percepção?
-                </div>
-            </div>
-
-            <div class="bg-zinc-900/30 border border-zinc-800/50 p-10 rounded-sm space-y-8 shadow-2xl">
-                <div class="flex justify-between items-start border-b border-zinc-800 pb-4">
-                    <span class="text-xs font-serif italic text-zinc-500">Evidência 02</span>
-                    <span class="text-xs tracking-widest text-zinc-600 uppercase">Termo: Paradeiso</span>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-2">
-                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">Visão Tradicional</h4>
-                        <p class="text-zinc-500 italic font-serif">Um destino final abstrato; um "céu" de descanso passivo após o fim dos tempos.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="text-[10px] uppercase tracking-widest text-amber-500/70 font-bold">Análise Etimológica</h4>
-                        <p class="text-zinc-200 font-serif">Do Persa antigo: "Jardim Cercado". Um ambiente de transição, frequência e preservação.</p>
-                        <span class="text-[9px] bg-amber-500/10 text-amber-500/60 px-2 py-0.5 rounded">Raiz: Pairidaeza</span>
-                    </div>
-                </div>
-
-                <div class="pt-6 text-sm text-zinc-500 leading-relaxed border-t border-zinc-800/50">
-                    <strong class="text-zinc-400">Provocação:</strong> Se o Paraíso é um "jardim cercado", ele sugere uma geografia específica para a alma. Não é o fim da linha, mas uma estação de frequência compatível com o corpo espiritual. Se há um jardim, quem seriam os zeladores dessa transição?
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="p-20 text-center border-t border-zinc-900">
-        <p class="text-[10px] tracking-[0.5em] text-zinc-700 uppercase">Onde o texto termina, a busca começa.</p>
-    </footer>
-
-</body>
-</html>
+                    <div class="space-y-3">
+                        <h4 class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold border-b border-zinc-800 w-fit">Visão Tradicional</h4>
+                        <p class="text-zinc-400 italic font-serif leading-relaxed">Um destino final abstrato; um "céu" de descanso passivo após
