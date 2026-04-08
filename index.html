@@ -17,57 +17,48 @@
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        /* ABAS DE VOLUME (Nível 1) */
+        /* INTRODUÇÃO E BOTÃO INICIAL */
+        .hero-section { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .btn-portal { border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem 2.5rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.7rem; color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s; background: transparent; cursor: pointer; }
+        .btn-portal:hover { background: white; color: black; border-color: white; }
+
+        /* NAVEGAÇÃO DE VOLUMES (STICKY) */
         .volume-tabs {
-            display: flex;
+            display: none; /* Escondido inicialmente */
             justify-content: center;
             gap: 2rem;
-            background: rgba(0,0,0,0.3);
+            background: rgba(17, 17, 19, 0.9);
             padding: 1.5rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
-        .vol-link { color: rgba(255,255,255,0.4); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 5px; }
-        .vol-link.active { color: #f59e0b; border-bottom-color: #f59e0b; font-weight: 900; }
+        .vol-link { color: rgba(255,255,255,0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 8px; font-weight: 700; }
+        .vol-link.active { color: #f59e0b; border-bottom-color: #f59e0b; }
 
-        /* NAVEGAÇÃO DE NÍVEIS (Nível 2 - Interno do Volume) */
-        .niveis-nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0 4rem 0;
+        /* NÍVEIS INTERNOS */
+        .niveis-grid { display: flex; justify-content: center; gap: 1.2rem; margin-top: 2rem; }
+        .nivel-btn {
+            width: 45px; height: 45px; border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+            border-radius: 50%; transition: all 0.3s; color: rgba(255,255,255,0.5); text-decoration: none;
         }
-        .nivel-dot {
-            width: 45px;
-            height: 45px;
-            border: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            border-radius: 50%;
-            transition: 0.3s;
-            color: rgba(255,255,255,0.4);
-            text-decoration: none;
-        }
-        .nivel-dot:hover { border-color: #f59e0b; color: #f59e0b; background: rgba(245, 158, 11, 0.05); }
+        .nivel-btn:hover { border-color: #f59e0b; color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
 
-        .volume-section { display: none; }
-        .volume-section.active { display: block; animation: fadeIn 0.6s ease; }
+        .volume-section { display: none; padding-top: 4rem; }
+        .volume-section.active { display: block; animation: fadeIn 0.8s ease; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .card-evidencia {
-            background: rgba(39, 39, 42, 0.4);
-            backdrop-filter: blur(10px);
+            background: rgba(39, 39, 42, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 3rem;
-            scroll-margin-top: 120px;
+            scroll-margin-top: 160px;
         }
         .texto-traducao-final { color: #f59e0b; font-weight: 800; }
         .label-topo { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.3em; font-size: 1.25rem; }
@@ -75,83 +66,86 @@
 </head>
 <body>
 
-    <nav class="p-10 flex flex-col items-center text-center">
-        <h1 class="font-serif text-4xl tracking-[0.3em] text-white uppercase font-bold">Códice Silencioso</h1>
-        <p class="text-[11px] tracking-[0.5em] uppercase text-amber-500 font-bold mt-2">Pesquisa e Filosofia Bíblica</p>
-    </nav>
+    <header class="p-8 flex flex-col items-center text-center">
+        <h1 class="font-serif text-3xl tracking-[0.3em] text-white uppercase font-bold">Códice Silencioso</h1>
+        <p class="text-[10px] tracking-[0.5em] uppercase text-amber-500 font-bold mt-2">Pesquisa e Filosofia Bíblica</p>
+    </header>
 
-    <div class="volume-tabs">
-        <a onclick="showVolume('vol1')" id="btn-vol1" class="vol-link active">Volume I: O Despertar</a>
-        <a onclick="showVolume('vol2')" id="btn-vol2" class="vol-link">Volume II: Expansão</a>
-        <a class="vol-link opacity-20 cursor-not-allowed">Volume III: Brevemente</a>
-    </div>
-
-    <main class="container-master py-12">
+    <main class="container-master">
         
-        <section id="vol1" class="volume-section active">
-            <div class="text-center mb-10">
-                <h2 class="font-serif text-5xl text-white font-bold">O Despertar do Viajante</h2>
-                <p class="text-zinc-600 text-sm mt-4 italic tracking-[0.3em] uppercase">Selecione o Nível de Evidência</p>
-                
-                <div class="niveis-nav">
-                    <a href="#v1-n1" class="nivel-dot">01</a>
-                    <a href="#v1-n2" class="nivel-dot">02</a>
-                    <a href="#v1-n3" class="nivel-dot">03</a>
-                    <a href="#v1-n4" class="nivel-dot">04</a>
+        <section id="hero" class="hero-section">
+            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold italic leading-tight max-w-5xl mb-10">
+                "A verdade não é uma herança <br>que se recebe pronta..."
+            </h2>
+            
+            <div class="max-w-2xl mx-auto space-y-6 text-zinc-500 italic font-serif text-lg leading-relaxed mb-12">
+                <p>"Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido oculto pelas camadas do tempo e da tradição."</p>
+                <div class="p-6 border border-white/5 bg-white/5 text-sm not-italic tracking-wide">
+                    "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas pela experiência pessoal."
+                </div>
+            </div>
+
+            <button onclick="entrarPortais()" class="btn-portal">Entrar nos Portais</button>
+        </section>
+
+        <nav id="nav-volumes" class="volume-tabs">
+            <div onclick="toggleVolume('vol1')" id="tab-v1" class="vol-link active">Volume I</div>
+            <div onclick="toggleVolume('vol2')" id="tab-v2" class="vol-link">Volume II</div>
+            <div class="vol-link opacity-20 cursor-not-allowed">Volume III</div>
+        </nav>
+
+        <section id="vol1" class="volume-section">
+            <div class="text-center mb-12">
+                <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-black">Volume I</span>
+                <h2 class="font-serif text-5xl text-white mt-4">O Despertar do Viajante</h2>
+                <p class="text-zinc-500 text-xs italic tracking-widest uppercase mt-2">Selecione o nível de evidência</p>
+                <div class="niveis-grid">
+                    <a href="#v1-n1" class="nivel-btn">01</a>
+                    <a href="#v1-n2" class="nivel-btn">02</a>
+                    <a href="#v1-n3" class="nivel-btn">03</a>
+                    <a href="#v1-n4" class="nivel-btn">04</a>
                 </div>
             </div>
 
             <div id="v1-n1" class="card-evidencia">
-                <span class="label-topo block mb-6">Evidência 01</span>
-                <p class="font-serif text-white text-3xl italic mb-4 leading-tight">"amēn soi legō sēmeron..."</p>
-                <p class="text-zinc-400 text-sm italic border-l-2 border-amber-500 pl-4 my-6">Análise técnica sobre a pontuação original e o tempo da promessa.</p>
+                <span class="label-topo block mb-4">Evidência 01</span>
+                <p class="font-serif text-white text-3xl italic mb-6">"amēn soi legō sēmeron met emou esē en tō paradeisō"</p>
                 <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Em verdade te digo hoje: estarás comigo no Paraíso."</span></p>
             </div>
-
-            <div id="v1-n2" class="card-evidencia">
-                <span class="label-topo block mb-6">Evidência 02</span>
-                <p class="font-serif text-white text-3xl italic mb-4 leading-tight">Etimologia: Pairidaeza</p>
-                <p class="text-zinc-400 text-sm italic border-l-2 border-amber-500 pl-4 my-6">A raiz persa define o local como um ambiente de preservação.</p>
-                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Um ambiente de transição, frequência e preservação."</span></p>
-            </div>
-
             </section>
 
         <section id="vol2" class="volume-section">
-            <div class="text-center mb-10">
-                <h2 class="font-serif text-5xl text-white font-bold">A Expansão da Percepção</h2>
-                <p class="text-zinc-600 text-sm mt-4 italic tracking-[0.3em] uppercase">Selecione o Nível de Evidência</p>
-                
-                <div class="niveis-nav">
-                    <a href="#v2-n5" class="nivel-dot">05</a>
-                    <a href="#v2-n6" class="nivel-dot">06</a>
-                    <a href="#v2-n7" class="nivel-dot">07</a>
+            <div class="text-center mb-12">
+                <span class="text-amber-500 text-[10px] tracking-[0.4em] uppercase font-black">Volume II</span>
+                <h2 class="font-serif text-5xl text-white mt-4">A Expansão da Percepção</h2>
+                <div class="niveis-grid">
+                    <a href="#v2-n5" class="nivel-btn">05</a>
+                    <a href="#v2-n6" class="nivel-btn">06</a>
                 </div>
             </div>
-
-            <div id="v2-n5" class="card-evidencia">
-                <span class="label-topo block mb-6">Evidência 05</span>
-                <p class="font-serif text-white text-3xl italic mb-4 leading-tight">"Soma Pneumatikon"</p>
-                <p class="text-zinc-400 text-sm italic border-l-2 border-amber-500 pl-4 my-6">A transição da semente animal para a espiritual.</p>
-                <p class="font-serif text-2xl pt-6 border-t border-white/5">Tradução: <span class="texto-traducao-final">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span></p>
-            </div>
-        </section>
+            </section>
 
     </main>
 
     <script>
-        function showVolume(volId) {
-            // Esconde todos
-            document.querySelectorAll('.volume-section').forEach(v => v.classList.remove('active'));
-            document.querySelectorAll('.vol-link').forEach(l => l.classList.remove('active'));
+        function entrarPortais() {
+            // Esconde o hero e mostra o menu de volumes e o primeiro volume
+            document.getElementById('hero').style.display = 'none';
+            document.getElementById('nav-volumes').style.display = 'flex';
+            document.getElementById('vol1').classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        function toggleVolume(id) {
+            document.querySelectorAll('.volume-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.vol-link').forEach(b => b.classList.remove('active'));
             
-            // Mostra o escolhido
-            document.getElementById(volId).classList.add('active');
-            document.getElementById('btn-' + volId).classList.add('active');
+            document.getElementById(id).classList.add('active');
+            if(id === 'vol1') document.getElementById('tab-v1').classList.add('active');
+            if(id === 'vol2') document.getElementById('tab-v2').classList.add('active');
             
-            window.scrollTo(0, 0); // Volta pro topo ao trocar volume
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-
 </body>
 </html>
