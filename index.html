@@ -16,13 +16,22 @@
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1300px; margin: 0 auto; padding: 0 2rem; }
         
+        /* CARD COM EFEITO GLASSMORPHISM */
         .card-evidencia {
-            background: rgba(24, 24, 27, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(39, 39, 42, 0.5); /* Transparência Sutil */
+            backdrop-filter: blur(10px); /* Desfoque de Fundo - ESSENCIAL */
+            -webkit-backdrop-filter: blur(10px); /* Suporte Safari */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Borda Leve */
             border-radius: 20px;
             padding: 4rem;
             margin-bottom: 5rem;
             width: 100%;
+            transition: all 0.3s ease; /* Transição Suave */
+        }
+        
+        .card-evidencia:hover {
+            border-color: rgba(255, 255, 255, 0.2); /* Borda mais visível no hover */
+            background: rgba(39, 39, 42, 0.6); /* Leve aumento de opacidade no hover */
         }
 
         /* Cor Dourada e Negrito para as Traduções */
