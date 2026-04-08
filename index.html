@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Códice Silencioso | Pesquisa e Filosofia Bíblica</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
@@ -14,16 +14,22 @@
             background-image: radial-gradient(circle at top, #1c1c1f 0%, #111113 100%);
         }
         .font-serif { font-family: 'EB Garamond', serif; }
-        .fade-in { animation: fadeIn 1.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
+        /* Aumento da largura máxima para ocupar a página */
+        .container-master {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
         .card-evidencia {
-            background: rgba(24, 24, 27, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 4rem; /* Aumento do preenchimento interno */
-            margin-bottom: 3rem;
+            background: rgba(24, 24, 27, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 5rem; /* Espaçamento interno muito maior para visibilidade */
+            margin-bottom: 4rem;
             width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         .texto-destaque {
@@ -33,15 +39,15 @@
 
         .etiqueta-termo {
             display: inline-block;
-            font-size: 13px; /* Aumentado */
+            font-size: 16px; /* Aumentado significativamente */
             background-color: #f59e0b;
             color: #111113;
-            padding: 4px 14px;
-            border-radius: 4px;
+            padding: 6px 18px;
+            border-radius: 6px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .label-topo {
@@ -49,8 +55,8 @@
             font-family: 'EB Garamond', serif;
             font-style: italic;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
-            font-size: 18px; /* Aumentado */
+            letter-spacing: 0.4em;
+            font-size: 22px; /* Maior e mais legível */
             display: block;
         }
 
@@ -58,64 +64,55 @@
             color: #71717a;
             text-transform: uppercase;
             letter-spacing: 0.3em;
-            font-size: 13px; /* Aumentado */
-            margin-bottom: 1.5rem;
+            font-size: 15px; /* Aumentado */
+            margin-bottom: 2rem;
             display: block;
-            font-weight: 600;
+            font-weight: 700;
         }
     </style>
 </head>
-<body class="selection:bg-amber-500/30 selection:text-amber-200">
+<body class="fade-in">
 
-    <nav class="p-12 flex justify-between items-center max-w-[90%] mx-auto">
+    <nav class="p-12 flex justify-between items-center container-master">
         <div>
-            <h1 class="font-serif text-4xl tracking-[0.3em] text-white uppercase font-bold">Códice Silencioso</h1>
-            <p class="text-xs tracking-[0.5em] uppercase text-amber-500 font-bold mt-2">Pesquisa e Filosofia Bíblica</p>
-        </div>
-        <div class="hidden md:block text-xs tracking-[0.4em] text-zinc-500 uppercase font-serif italic">
-            Sertãozinho, SP — 2026
+            <h1 class="font-serif text-5xl tracking-[0.3em] text-white uppercase font-bold">Códice Silencioso</h1>
+            <p class="text-sm tracking-[0.5em] uppercase text-amber-500 font-bold mt-3">Pesquisa e Filosofia Bíblica</p>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-8 py-10 fade-in">
+    <main class="container-master py-16">
         
-        <section class="text-center space-y-16 mb-40">
-            <h2 class="font-serif text-6xl md:text-8xl text-white italic leading-tight font-bold">
+        <section class="text-center space-y-16 mb-48">
+            <h2 class="font-serif text-7xl md:text-9xl text-white italic leading-tight font-bold">
                 "A verdade não é uma herança <br>que se recebe pronta..."
             </h2>
             
-            <div class="max-w-4xl mx-auto space-y-10">
-                <p class="text-zinc-300 text-2xl leading-relaxed font-light">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <p class="text-zinc-300 text-3xl leading-relaxed font-light">
                     Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido ocultado pelas camadas do tempo e da tradição.
                 </p>
-                <div class="py-12 px-16 border-l border-r border-white/10 bg-zinc-900/10 italic text-zinc-400 font-serif text-2xl leading-snug">
+                <div class="py-14 px-20 border-y border-white/10 bg-zinc-900/10 italic text-zinc-400 font-serif text-3xl leading-snug">
                     "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas e pela experiência pessoal."
                 </div>
             </div>
-            
-            <div class="pt-10">
-                <button class="bg-white text-black px-14 py-5 text-sm tracking-[0.5em] uppercase font-black hover:bg-amber-500 hover:text-white transition-all shadow-2xl">
-                    Entrar nos Portais
-                </button>
-            </div>
         </section>
 
-        <section class="space-y-16">
-            <div class="text-center mb-24">
-                <span class="text-amber-500 text-sm tracking-[0.6em] uppercase font-black">Volume I</span>
-                <h3 class="font-serif text-6xl md:text-7xl text-white mt-6 font-bold">O Despertar do Viajante</h3>
-                <p class="text-zinc-500 text-lg mt-6 italic tracking-[0.4em] uppercase font-light border-b border-white/5 pb-10 max-w-lg mx-auto">
+        <section class="space-y-20">
+            <div class="text-center mb-32 border-b border-white/5 pb-20">
+                <span class="text-amber-500 text-lg tracking-[0.7em] uppercase font-black">Volume I</span>
+                <h3 class="font-serif text-7xl md:text-8xl text-white mt-8 font-bold">O Despertar do Viajante</h3>
+                <p class="text-zinc-500 text-2xl mt-8 italic tracking-[0.4em] uppercase font-light">
                     A natureza da continuidade consciente
                 </p>
             </div>
 
             <div class="card-evidencia">
-                <div class="flex justify-between items-center mb-12 border-b border-white/5 pb-6">
+                <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
                     <span class="label-topo">Evidência 01</span>
-                    <span class="text-zinc-500 text-sm tracking-[0.3em] uppercase font-bold">Lucas 23:43</span>
+                    <span class="text-zinc-500 text-lg tracking-[0.3em] uppercase font-bold">Lucas 23:43</span>
                 </div>
                 <span class="sub-label">Sentido Restaurado (Análise de Pontuação)</span>
-                <p class="font-serif text-zinc-100 text-4xl leading-relaxed">
+                <p class="font-serif text-zinc-100 text-5xl leading-[1.4]">
                     Nesta parte onde o texto aborda o tempo da promessa, <br>
                     <span class="texto-destaque">"Em verdade te digo hoje: estarás comigo no Paraíso."</span>
                 </p>
@@ -123,12 +120,12 @@
             </div>
 
             <div class="card-evidencia">
-                <div class="flex justify-between items-center mb-12 border-b border-white/5 pb-6">
+                <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
                     <span class="label-topo">Evidência 02</span>
-                    <span class="text-zinc-500 text-sm tracking-[0.3em] uppercase font-bold">Termo: Paradeiso</span>
+                    <span class="text-zinc-500 text-lg tracking-[0.3em] uppercase font-bold">Termo: Paradeiso</span>
                 </div>
                 <span class="sub-label">Análise Etimológica</span>
-                <p class="font-serif text-zinc-100 text-4xl leading-relaxed">
+                <p class="font-serif text-zinc-100 text-5xl leading-[1.4]">
                     Nesta parte onde a raiz persa define o local, <br>
                     <span class="texto-destaque">"Jardim Cercado. Um ambiente de transição, frequência e preservação."</span>
                 </p>
@@ -136,12 +133,12 @@
             </div>
 
             <div class="card-evidencia">
-                <div class="flex justify-between items-center mb-12 border-b border-white/5 pb-6">
+                <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
                     <span class="label-topo">Evidência 04</span>
-                    <span class="text-zinc-500 text-sm tracking-[0.3em] uppercase font-bold">1 Coríntios 15:44</span>
+                    <span class="text-zinc-500 text-lg tracking-[0.3em] uppercase font-bold">1 Coríntios 15:44</span>
                 </div>
                 <span class="sub-label">A Natureza do Veículo</span>
-                <p class="font-serif text-zinc-100 text-4xl leading-relaxed">
+                <p class="font-serif text-zinc-100 text-5xl leading-[1.4]">
                     Nesta parte onde o texto define os corpos, <br>
                     <span class="texto-destaque">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span>
                 </p>
@@ -151,8 +148,8 @@
         </section>
     </main>
 
-    <footer class="p-24 text-center border-t border-white/5 mt-20">
-        <p class="text-xs tracking-[0.8em] text-zinc-700 uppercase font-black">Investigando o Invisível — 2026</p>
+    <footer class="p-32 text-center border-t border-white/5 mt-32">
+        <p class="text-sm tracking-[1em] text-zinc-700 uppercase font-black italic">"Investigando o Invisível" — Sertãozinho, SP</p>
     </footer>
 
 </body>
