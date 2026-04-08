@@ -17,11 +17,9 @@
         .font-serif { font-family: 'EB Garamond', serif; }
         .container-master { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        /* CABEÇALHO */
         .header-logo { padding: 3rem 0; text-align: center; }
         .subtitulo-topo { font-size: 14px; letter-spacing: 0.6em; } 
 
-        /* INTRODUÇÃO */
         .hero-section { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .frase-impacto { font-size: 3.2rem; line-height: 1.1; max-width: 850px; } 
         
@@ -33,9 +31,7 @@
             margin: 3.5rem 0;
             position: relative;
         }
-        .texto-objetivo { font-size: 1.3rem; line-height: 1.6; color: #d4d4d8; } 
 
-        /* BOTÃO VIVO (Dourado Pulsante) */
         .btn-portal { 
             position: relative;
             background: linear-gradient(45deg, #b45309, #f59e0b, #fbbf24, #f59e0b);
@@ -53,19 +49,9 @@
             transition: transform 0.3s;
         }
 
-        @keyframes moveGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes moveGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes pulseGlow { 0% { box-shadow: 0 0 10px #f59e0b; } 50% { box-shadow: 0 0 30px #fbbf24; } 100% { box-shadow: 0 0 10px #f59e0b; } }
 
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px #f59e0b; }
-            50% { box-shadow: 0 0 30px #fbbf24; }
-            100% { box-shadow: 0 0 10px #f59e0b; }
-        }
-
-        /* NAVEGAÇÃO DE VOLUMES */
         .volume-tabs {
             display: none;
             justify-content: center;
@@ -81,9 +67,16 @@
         .vol-link { color: rgba(255,255,255,0.4); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; transition: 0.3s; cursor: pointer; border-bottom: 2px solid transparent; padding-bottom: 8px; font-weight: 800; }
         .vol-link.active { color: #f59e0b; border-bottom-color: #f59e0b; }
 
-        /* CARDS E CONTEÚDO TÉCNICO */
         .volume-container { display: none; padding: 6rem 0; }
         .volume-container.active { display: block; animation: fadeInUp 0.8s ease forwards; }
+
+        /* NOVOS ESTILOS PARA NÍVEIS E CONTEXTO */
+        .nav-niveis { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0 4rem 0; }
+        .btn-nivel { width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #52525b; transition: 0.3s; cursor: pointer; font-weight: 700; }
+        .btn-nivel:hover, .btn-nivel.active { border-color: #f59e0b; color: #f59e0b; background: rgba(245, 158, 11, 0.05); }
+
+        .box-contexto { background: rgba(245, 158, 11, 0.03); border: 1px dashed rgba(245, 158, 11, 0.2); padding: 2rem; margin: 0 auto 3rem auto; max-width: 850px; text-align: center; }
+        .contexto-texto { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a1a1aa; line-height: 1.6; }
 
         .card-evidencia {
             background: rgba(39, 39, 42, 0.3);
@@ -91,17 +84,16 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 8px;
             padding: 3rem;
-            margin-bottom: 3rem;
             max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             position: relative;
         }
         .label-evidencia { color: #f59e0b; font-family: 'EB Garamond', serif; font-style: italic; text-transform: uppercase; letter-spacing: 0.4em; font-size: 1.2rem; margin-bottom: 1.5rem; display: block; }
         .ref-biblica { position: absolute; top: 3.5rem; right: 3rem; font-size: 0.65rem; color: #52525b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
         .texto-traducao { color: #f59e0b; font-weight: 800; }
         
-        .contexto-tecnico { font-size: 11px; line-height: 1.6; color: #a1a1aa; max-width: 800px; margin: 1.5rem 0 2.5rem 0; padding-left: 1.2rem; border-left: 2px solid #f59e0b; font-weight: 400; }
+        .nivel-content { display: none; animation: fadeInUp 0.5s ease forwards; }
+        .nivel-content.active { display: block; }
 
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -116,20 +108,10 @@
     <main class="container-master">
         
         <section id="intro" class="hero-section">
-            <h2 class="font-serif frase-impacto text-white font-bold italic mb-12">
-                "A verdade não é uma herança <br>que se recebe pronta..."
-            </h2>
-            
-            <p class="max-w-3xl text-zinc-500 italic font-serif text-2xl leading-relaxed mb-10">
-                Bem-vindo ao Laboratório da Consciência. Este é um santuário de autoestudo silencioso para quem busca o real sentido oculto pelas camadas do tempo e da tradição.
-            </p>
-
+            <h2 class="font-serif frase-impacto text-white font-bold italic mb-12">"A verdade não é uma herança <br>que se recebe pronta..."</h2>
             <div class="nota-autor">
-                <p class="italic font-serif texto-objetivo">
-                    "O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas através da análise técnica e da experiência pessoal."
-                </p>
+                <p class="italic font-serif text-xl">"O objetivo desta pesquisa não é impor uma nova crença, mas instigar a busca por respostas através da análise técnica e da experiência pessoal."</p>
             </div>
-
             <button onclick="liberarAcesso()" class="btn-portal mt-8">Entrar nos Portais</button>
         </section>
 
@@ -141,72 +123,78 @@
         </nav>
 
         <section id="vol1" class="volume-container">
-            <div class="text-center mb-24">
+            <div class="text-center mb-12">
                 <span class="text-amber-500 text-xs tracking-[0.5em] uppercase font-black">Volume I</span>
                 <h2 class="font-serif text-6xl text-white mt-4 font-bold">O Despertar do Viajante</h2>
-                <p class="text-zinc-600 text-sm italic tracking-[0.4em] uppercase mt-6">A natureza da continuidade consciente</p>
+                <p class="text-zinc-500 text-xl italic tracking-[0.4em] uppercase mt-8 font-bold">A natureza da continuidade consciente</p>
             </div>
 
-            <div class="card-evidencia">
-                <span class="ref-biblica">Lucas 23:43</span>
-                <span class="label-evidencia">Evidência 01</span>
-                <p class="font-serif text-white text-4xl italic mb-6 leading-snug">"amēn soi legō sēmeron..."</p>
-                <p class="font-serif text-zinc-400 text-3xl italic mb-10">"Amen dico tibi hodie..."</p>
-                
-                <div class="contexto-tecnico">
-                    <strong>Contexto:</strong> A pontuação original foca no dia da promessa, não na ida imediata ao paraíso. Cristo declara a promessa "hoje", no momento do sacrifício.
-                </div>
-                
-                <div class="pt-8 border-t border-white/5">
-                    <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Em verdade te digo hoje: estarás comigo no Paraíso."</span></p>
-                </div>
+            <div class="nav-niveis">
+                <div onclick="showNivel('vol1', 1)" class="btn-nivel active btn-v1-1">01</div>
+                <div onclick="showNivel('vol1', 2)" class="btn-nivel btn-v1-2">02</div>
+                <div onclick="showNivel('vol1', 3)" class="btn-nivel btn-v1-3">03</div>
+                <div onclick="showNivel('vol1', 4)" class="btn-nivel btn-v1-4">04</div>
             </div>
 
-            <div class="card-evidencia">
-                <span class="label-evidencia">Evidência 02</span>
-                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">Persa antiga: "Pairidaeza" (Jardim Cercado)</p>
-                
-                <div class="contexto-tecnico">
-                    <strong>Contexto:</strong> O termo descreve um local de quarentena e preservação da consciência, um ambiente de transição intermediário e frequencial.
+            <div id="vol1-n1" class="nivel-content active">
+                <div class="box-contexto">
+                    <p class="contexto-texto">"Analisamos este texto para demonstrar que a promessa de consciência não está vinculada a um tempo futuro distante, mas a uma validade imediata estabelecida no 'hoje'."</p>
                 </div>
-                
-                <div class="pt-8 border-t border-white/5">
-                    <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Um ambiente de transição, frequência e preservação."</span></p>
+                <div class="card-evidencia">
+                    <span class="ref-biblica">Lucas 23:43</span>
+                    <span class="label-evidencia">Evidência 01</span>
+                    <p class="font-serif text-white text-4xl italic mb-6 leading-snug">"amēn soi legō sēmeron..."</p>
+                    <div class="pt-8 border-t border-white/5">
+                        <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Em verdade te digo hoje: estarás comigo no Paraíso."</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="card-evidencia">
-                <span class="ref-biblica">João 20:17</span>
-                <span class="label-evidencia">Evidência 03</span>
-                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"Ainda não subi para meu Pai."</p>
-                
-                <div class="contexto-tecnico">
-                    <strong>Contexto:</strong> Reforça a natureza do Paraíso como um estado intermediário. Cristo afirma não ter subido ao Pai três dias após a transição.
+            <div id="vol1-n2" class="nivel-content">
+                <div class="box-contexto">
+                    <p class="contexto-texto">"O termo 'Paraíso' é analisado aqui para definir a natureza do ambiente frequencial que acolhe a consciência logo após a transição biológica."</p>
                 </div>
-                
-                <div class="pt-8 border-t border-white/5">
-                    <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Não me detenhas, porque ainda não subi para meu Pai." - João 20:17</span></p>
+                <div class="card-evidencia">
+                    <span class="label-evidencia">Evidência 02</span>
+                    <p class="font-serif text-white text-4xl italic mb-10 leading-snug">Persa antiga: "Pairidaeza" (Jardim Cercado)</p>
+                    <div class="pt-8 border-t border-white/5">
+                        <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Um ambiente de transição, frequência e preservação."</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="card-evidencia">
-                <span class="ref-biblica">1 Coríntios 15:44</span>
-                <span class="label-evidencia">Evidência 04</span>
-                <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"Soma Pneumatikon": Semente espiritual.</p>
-                
-                <div class="contexto-tecnico">
-                    <strong>Contexto:</strong> A transição do veículo biológico para o veículo de frequência espiritual pura, necessário para habitar as dimensões de transição.
+            <div id="vol1-n3" class="nivel-content">
+                <div class="box-contexto">
+                    <p class="contexto-texto">"Este versículo evidencia que a consciência operante pode estar presente e ativa em estados intermediários antes da ascensão final."</p>
                 </div>
-                
-                <div class="pt-8 border-t border-white/5">
-                    <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Semeia-se corpo animal, ressuscitará corpo espiritual." - 1 Coríntios 15:44</span></p>
+                <div class="card-evidencia">
+                    <span class="ref-biblica">João 20:17</span>
+                    <span class="label-evidencia">Evidência 03</span>
+                    <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"Ainda não subi para meu Pai."</p>
+                    <div class="pt-8 border-t border-white/5">
+                        <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Não me detenhas, porque ainda não subi para meu Pai."</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vol1-n4" class="nivel-content">
+                <div class="box-contexto">
+                    <p class="contexto-texto">"Análise técnica sobre a 'Semente Espiritual', o veículo de manifestação que permite a continuidade da percepção em dimensões extrafísicas."</p>
+                </div>
+                <div class="card-evidencia">
+                    <span class="ref-biblica">1 Coríntios 15:44</span>
+                    <span class="label-evidencia">Evidência 04</span>
+                    <p class="font-serif text-white text-4xl italic mb-10 leading-snug">"Soma Pneumatikon": Semente espiritual.</p>
+                    <div class="pt-8 border-t border-white/5">
+                        <p class="font-serif text-2xl">Tradução: <span class="texto-traducao">"Semeia-se corpo animal, ressuscitará corpo espiritual."</span></p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="vol2" class="volume-container"><div class="text-center py-20 text-zinc-500 font-serif italic text-3xl">Volume II: A Expansão da Percepção</div></section>
-        <section id="vol3" class="volume-container"><div class="text-center py-20 text-zinc-500 font-serif italic text-3xl">Volume III: Pesquisa Bibliográfica em Processamento</div></section>
-        <section id="vol4" class="volume-container"><div class="text-center py-20 text-zinc-500 font-serif italic text-3xl">Volume IV: Conclusões Hermenêuticas Finais</div></section>
+        <section id="vol2" class="volume-container"><div class="text-center py-20 text-zinc-500 font-serif italic text-3xl">Volume II: Em desenvolvimento com níveis 01-04</div></section>
+        <section id="vol3" class="volume-container"><div class="text-center py-20 text-zinc-500 font-serif italic text-3xl">Volume III: Em desenvolvimento com níveis 01-04</div></section>
+        <section id="vol4" class="volume-container"><div class="text-center py-20 text-zinc-500 font-serif italic text-3xl">Volume IV: Em desenvolvimento com níveis 01-04</div></section>
 
     </main>
 
@@ -224,6 +212,21 @@
             document.getElementById(id).classList.add('active');
             document.getElementById('tab-' + id.replace('vol', 'v')).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showNivel(volId, nivelNum) {
+            // Esconde todos os conteúdos de nível do volume atual
+            const container = document.getElementById(volId);
+            container.querySelectorAll('.nivel-content').forEach(nc => nc.classList.remove('active'));
+            
+            // Remove active de todos os botões de nível do volume
+            container.querySelectorAll('.btn-nivel').forEach(bn => bn.classList.remove('active'));
+
+            // Mostra o nível selecionado
+            document.getElementById(volId + '-n' + nivelNum).classList.add('active');
+            
+            // Ativa o botão correspondente
+            container.querySelector('.btn-' + volId + '-' + nivelNum).classList.add('active');
         }
     </script>
 </body>
